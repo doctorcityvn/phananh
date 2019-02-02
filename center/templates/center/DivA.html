@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+            	
+    <script>
+        function dropdownMenu1565Set(val)
+        {
+            if(val.innerHTML!=""){$('#menu1').val(val.innerHTML);$('#menu1').html(val.innerHTML);}
+             else{$('#menu1').val('');$('#menu1').html('Select Client');}
+        }
+    </script>
+    <title>Document</title>
+    <style type="text/css">
+    .txtdeepshadow {
+  text-align: center;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 50px;
+  height: 100px;
+  padding-top: 20px;
+  color: #FFD700;
+  background-color: #87CEFA;
+  letter-spacing: .1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div  class="row">
+            <div class="col-sm-2">
+                <center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="responsive-img" style="max-height:120px"></center>
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+                    <center><h1  class="txtdeepshadow">Trung tâm hỗ trợ bác sỹ</h1></center>
+                    
+                </div>
+        </div>
+        <div  class="row">
+          
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Phòng Khám
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    
+                  
+                
+                            
+                            <li><a href="/DivA/">DivA</a></li>
+                            <li><a href="/DivB/">DivB</a></li>
+                            <li><a href="/DivC/">DivC</a></li>
+                                
+                            
+                            <li class="divider"></li>
+                            <li><a href="/all/">All Div</a></li>
+                            </ul>
+                </div>
+                
+            
+
+                    
+                </div>
+                
+            </div>
+            <br/>
+            {% if person1 %}
+                                
+                                                        
+                                {% for name2 in person1 %}
+                                <li><a href="#">{{name2}}  ,   {{name2.age}}  tuổi </a></li>
+                                
+                                {% endfor %}
+                            
+                            {% else %}
+                            <p>No Div are available.</p>
+                            {% endif %}
+                            </ul>
+            
+        </div>
+        
+        
+        
+        </div>
+    </div>
+    
+</body>
+</html>
