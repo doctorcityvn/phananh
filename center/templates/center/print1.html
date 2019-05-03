@@ -1,0 +1,340 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+    <script src="{% static 'js/test.js' %}"></script>
+    <script src="{% static 'js/countrypicker.js' %}"></script>
+    <script src="{% static 'js/countrypicker.min.js' %}"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/i18n/defaults-*.min.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <title>Document</title>
+    <style>
+
+    .table-wrapper-scroll-y {
+        display: block;
+        max-height: 300px;
+        overflow-y: auto;
+        font-weight: normal;
+    }
+
+div {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+table {
+  width: 100%;
+}
+
+th {
+  height: 10px;
+}
+
+</style>
+<style>
+.co_1 {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 40%;
+  font-size: 14px;
+  padding: 5px 1px 5px 25px;
+  border: 1px solid #aaaa55;
+  margin-bottom: 12px;
+}
+
+
+#myInputSearch {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 14px 12px 40px;
+
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<script>
+$(document).ready(function(){
+
+    $("#myUL").hide();
+  $("#myInputSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#myInputSearchtc").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTabletc tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function () {
+$('#myTabletc').DataTable({
+"scrollY": "50vh",
+"scrollCollapse": true,
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+
+
+
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" style="font-size: 20px;" onclick="closeNav()" font>&times; {{ user.first_name }}</a></h6>
+      <br/>
+
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/menu/" style="font-size: 15px; text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/about/" style="font-size: 15px; text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg" style="font-size: 15px;text-align:left;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+
+    </div>
+<div class="container">
+        <div  class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+            </div>
+            <div class="col-xs-9 col-md-9 col-lg-10">
+
+
+                <br/>
+            </div>
+
+
+        </div>
+
+                <div  class="row" >
+                    <div  class="col-xs-12 col-md-1 col-lg-6 col-lg-offset-3" >
+
+                    <h5>Tên đơn vị…………….<h5>
+                    <h5>Điện thoại……………...<h5>
+                    <center><h1 id="tt1">Đơn thuốc</h1></center>
+                    {% for ng1 in person1 %}
+                    <h5>Họ tên:<b> {{ng1.namepatient}}</b><h5>
+
+                    <h5>Tuổi: {{ng1.age}}<h5>
+
+                    <h5>Cân nặng.........<h5>
+                    <h5>nam/nữ…….<h5>
+                    <h5>Mã số thẻ bảo hiểm y tế (nếu có)……………………….<h5>
+                    <h5>Địa chỉ liên hệ:{{ng1.place}}</h5>
+                    {% endfor %}
+                    <h5>Chẩn đoán………………………………………………………</h5>
+                    <h5><b>Thuốc Điều trị:</b></h5>
+                    </div>
+                </div>
+
+        <div  class="row" >
+
+            <div  class="col-xs-12 col-md-1 col-lg-6 col-lg-offset-3" >
+
+                    <div class="row">
+
+                            <table class="table" align="left">
+                                  <thead>
+                                      <tr>
+
+                                                    <th>
+                                                    <div id="tenhoatchat_1"><div>Tên hoạt chất/thương mại</div>
+                                                    </th>
+
+                                                    <th>
+                                                    <div style="color: red;" id="soluong_1">Số lượng</div>
+                                                    </th>
+                                                    <th>
+                                                    <div id="soluong_1">Đơn vị</div>
+                                                    </th>
+
+                                                </tr>
+
+
+
+                                            </thead>
+                                  <tbody>
+
+                                                {% for tc1 in donthuoc1 %}
+                                                <tr>
+
+                                                    <td>
+                                                    <div>- {{ tc1.codedonthuoc.thc}}</div>
+                                                    <div>- {{ tc1.codedonthuoc.tbd}}</div>
+                                                    <div>- {{ tc1.huongdan}}</div>
+
+                                                    </td>
+
+                                                    <td >
+                                                    <div style="color: red;">{{ tc1.soluong}}</div>
+
+                                                    </td>
+
+                                                    <td >
+
+                                                    <div>{{ tc1.codedonthuoc.dvt}}</div>
+                                                    </td>
+
+                                                </tr>
+
+                                                {% endfor %}
+
+
+                                   </tbody>
+                            </table>
+
+
+
+
+            </div>
+        </div>
+        </div>
+        <div  class="row" >
+            <div  class="col-xs-12 col-md-1 col-lg-6 col-lg-offset-3" >
+            <h5>Lời dặn:<h5>
+                </div>
+        </div>
+        <div  class="row" >
+            <div  class="col-xs-12 col-md-1 col-lg-6 col-lg-offset-6" align="center">
+            <h5>Ngày {{day1}} tháng {{month1}} năm  {{year1}}<h5>
+                <h5>Bác sỹ/Y sỹ khám bệnh<h5>
+
+                    <br/>
+                    <br/>
+                    <h5><b>{{ user.first_name }}</b><h5>
+            </div>
+        </div>
+        <div  class="row" >
+            <div  class="col-xs-12 col-md-1 col-lg-6 col-lg-offset-3" >
+            <h6>- Khám lại xin mang theo đơn này.<h6>
+                <h6>- Tên bố hoặc mẹ của trẻ hoặc người đưa trẻ đến khám bệnh, chữa bệnh</h6>
+                <h6>………………………………………………………………………</h6>
+            </div>
+        </div>
+        <br/ >
+        <br/ >
+
+
+
+
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        <script>
+            $(window).load(function() {
+                $("#myUL").hide();
+            });
+
+        </script>
+
+        <script>
+$(document).ready(function() {
+
+});
+</script>
+
+</div>
+
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+</html>

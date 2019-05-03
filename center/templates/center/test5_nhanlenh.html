@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("http://doctorcityvn.pythonanywhere.com/datlenh/");
+  });
+});
+</script>
+</head>
+<body>
+    <div class="container">
+<div class="row">
+
+    <div class="col-lg-1">
+    <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+    </div>
+    <div class="col-lg-1">
+    <button>Get External Content</button>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1062 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+    <script src="{% static 'js/test.js' %}"></script>
+    <script src="{% static 'js/countrypicker.js' %}"></script>
+    <script src="{% static 'js/countrypicker.min.js' %}"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/i18n/defaults-*.min.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <title>Document</title>
+    <style>
+
+    .table-wrapper-scroll-y {
+        display: block;
+        max-height: 300px;
+        overflow-y: auto;
+        font-weight: normal;
+    }
+
+div {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+table {
+  width: 100%;
+}
+
+th {
+  height: 10px;
+}
+
+</style>
+<style>
+.co_1 {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 40%;
+  font-size: 14px;
+  padding: 5px 1px 5px 25px;
+  border: 1px solid #aaaa55;
+  margin-bottom: 12px;
+}
+
+
+#myInputSearch {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 14px 12px 40px;
+
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<script>
+$(document).ready(function(){
+
+    $("#myUL").hide();
+  $("#myInputSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#myInputSearchtc").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTabletc tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function () {
+$('#myTabletc').DataTable({
+"scrollY": "50vh",
+"scrollCollapse": true,
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+
+
+
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" style="font-size: 20px;" onclick="closeNav()" font>&times; {{ user.first_name }}</a></h6>
+      <br/>
+
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/menu/" style="font-size: 15px; text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/about/" style="font-size: 15px; text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg" style="font-size: 15px;text-align:left;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+
+    </div>
+<div class="container">
+        <div  class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+            </div>
+            <div class="col-xs-9 col-md-9 col-lg-10">
+                <center><h1 id="tt1">Trung tâm hỗ trợ bác sỹ</h1></center>
+
+                <br/>
+            </div>
+
+            <div class="col-xs-2 col-md-1 col-lg-1">
+                <input type="checkbox" id="toggle-event" checked data-toggle="toggle" data-size="normal" data-offstyle="warning" data-width="30%"  data-off="VN"  data-on="En" >
+                    <script>
+                        $(function() {
+                            $('#toggle-event').bootstrapToggle('on')
+                            $('#toggle-event').change(function() {
+                                var a = $('#toggle-event:checkbox').is(':checked');
+                                $( "#tt1" ).html(a);
+                                if (a) {
+                                        $( "#tt1" ).html("Trung tâm hỗ trợ bác sỹ");
+                                        $( "#tctq3" ).html("Triệu chứng tổng quát");
+
+                                        $( "#tccb3" ).html("Triệu chứng cục bộ");
+                                        $( "#xlkc_3" ).html("Xử lý khẩn cấp");
+                                        $( "#dv_3" ).html("Dịch vụ");
+                                        $( "#dt3" ).html("Đơn thuốc");
+                                        $( "#kl3" ).html("Kết quả khám");
+                                        $( "#tc_1" ).html("Triệu chứng");
+                                        $( "#tc_2" ).html("Triệu chứng");
+                                        $( "#tc_3" ).html("Triệu chứng");
+                                        $( "#tt_1" ).html("Cấp độ");
+                                        $( "#tt_2" ).html("Cấp độ");
+                                        $( "#tt_3" ).html("Cấp độ");
+                                        $( "#tt_4" ).html("Cấp độ");
+                                        $( "#tdv" ).html("Tên dịch vụ");
+
+                                        $( "#ghichu_1" ).html("Ghi chú");
+                                        $( "#tenthuongmai_1" ).html("Tên thương mại");
+                                        $( "#tenhoatchat_1" ).html("Tên hoạt chất");
+                                        $( "#soluong_1" ).html("Số lượng");
+                                        $( "#thongtin_1" ).html("Thông tin");
+                                        $( "#donvi_1" ).html("Đơn vị");
+                                        $( "#huongdansudung_1" ).html("Hướng dẫn sử dụng");
+                                        $( "#stt_1" ).html("STT.");
+                                        $( "#tuoi_1" ).html("Tuổi");
+                                        $( "#tuoi_2" ).html("Tuổi");
+                                        $( "#hoten_1" ).html("Họ tên");
+                                        $( "#ttbn_1" ).html("Thông tin bệnh nhân");
+                                        $( "#diachi_1" ).html("Địa chỉ");
+                                        $( "#ngaykham_1" ).html("Ngày khám");
+                                        $( "#lankham_1" ).html("Lần khám:");
+                                        $( "#phongkham_1" ).html("Khoa khám bệnh");
+                                        $( "#phongkham_2" ).html("Khoa khám bệnh");
+                                        $( "#ttbn_3" ).html("Triệu chứng bệnh nhân");
+
+                                        $("#myInputSearch").attr("placeholder", "Search tên bệnh nhân").val("").focus().blur();
+
+
+
+
+
+
+                                  } else {
+                                      $( "#tt1" ).html("Doctor Support Center");
+                                      $( "#tctq3" ).html("Synthesis symptoms");
+                                      $( "#tccb3" ).html("a part symptoms");
+                                      $( "#xlkc_3" ).html("Emergency handling");
+                                      $( "#dv_3" ).html("Service");
+                                      $( "#dt3" ).html("Prescription");
+                                      $( "#kl3" ).html("Conclusion");
+                                      $( "#tc_1" ).html("Symptom");
+                                      $( "#tc_2" ).html("Symptom");
+                                      $( "#tc_3" ).html("Symptom");
+                                      $( "#tt_1" ).html("Grade");
+                                      $( "#tt_2" ).html("Grade");
+                                      $( "#tt_3" ).html("Grade");
+                                      $( "#tt_4" ).html("Grade");
+                                      $( "#ghichu_1" ).html("Note");
+                                      $( "#tdv" ).html("Service request");
+                                        $( "#tenthuongmai_1" ).html("Comerce Name");
+                                        $( "#tenhoatchat_1" ).html("Active ingredient name");
+                                        $( "#soluong_1" ).html("Amount");
+                                        $( "#donvi_1" ).html("Unit");
+                                        $( "#huongdansudung_1" ).html("Usage");
+                                        $( "#thongtin_1" ).html("Information");
+                                        $( "#stt_1" ).html("No.");
+                                        $( "#tuoi_1" ).html("Age");
+                                        $( "#tuoi_2" ).html("Age");
+                                        $( "#hoten_1" ).html("Name");
+                                        $( "#ttbn_1" ).html("Information of patient");
+                                        $( "#diachi_1" ).html("Place");
+                                        $( "#ngaykham_1" ).html("Date");
+                                        $( "#lankham_1" ).html("Times");
+                                        $( "#phongkham_1" ).html("Division:");
+                                        $( "#phongkham_2" ).html("Division:");
+                                        $( "#ttbn_3" ).html("Symptom of patient");
+                                        $("#myInputSearch").attr("placeholder", "Search name patient").val("").focus().blur();
+
+
+
+
+
+
+
+                                  }
+                        })
+
+                      })
+                    </script>
+            </div>
+        </div>
+        <div  class="row" >
+
+            <div  class="col-xs-12 col-md-1 col-lg-3" >
+
+                <div  class="row" hidden>
+                    <center><h6><b> Danh sách bệnh nhân đặt lệnh</b></h6><center>
+                    <div class="table-wrapper-scroll-y">
+                        <table class="table" id="myTable">
+                            <tr>
+                                <th><b id="stt_1">Stt</b></th>
+                                <th><b id="hoten_1">Họ tên</b></th>
+                                <th><b id="tuoi_1">Tuổi/Tp</b></th>
+                                <th><b id="cobacsychua">Có Bs</b></th>
+                            </tr>
+                            {% if person1 %}
+                                {% for name2 in person1 %}
+                            <tr>
+                                <td>{{forloop.counter}} </td>
+                                <td><a href="http://doctorcityvn.pythonanywhere.com/all/{{name2.codepatientp}}">{{name2}} </a></td>
+                                <td>{{name2.age}} tuổi, {{name2.City}} </a></td>
+                                <td>No </td>
+                            </tr>
+                                {% endfor %}
+                            {% endif %}
+                        </table>
+                    </div>
+
+                </div>
+                <div  class="row" >
+                      <div  class="col-xs-12 col-md-1 col-lg-6" >
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="margin-left:-10px;margin-top:10px;width:100%"><b id="phongkham_2">Trung tâm</b>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                {% if namediv_list %}
+                                    {% for name1 in namediv_list %}
+                                        <li><a href="/{{name1.id}}/">{{name1}} </a></li>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>No Div are available.</p>
+                                 {% endif %}
+                                    <li class="divider"></li>
+                                    <li><a href="http://doctorcityvn.pythonanywhere.com">All Div</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                      <div  class="col-xs-12 col-md-1 col-lg-6" >
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="margin-left:-10px;margin-top:10px;width:100%"><b id="phongkham_2">Phòng</b>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+
+                                {% for name1 in phongweb %}
+                                        <li><a href="">{{name1.tenphong}} </a></li>
+                                {% endfor %}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div  class="row" >
+
+                    <div  class="col-xs-12 col-md-1 col-lg-12" >
+                        <input type="text" id="myInputSearch" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                    </div>
+                </div>
+                <div  class="row" >
+                    <div class="table-wrapper-scroll-y">
+                        <table class="table" id="myTable">
+                            <tr>
+                                <th><b id="stt_1">Stt</b></th>
+                                <th><b id="hoten_1">Họ tên</b></th>
+                                <th><b id="tuoi_1">Tuổi/Tp</b></th>
+                            </tr>
+                            {% if person1 %}
+                                {% for name2 in person1 %}
+                            <tr>
+                                <td>{{forloop.counter}} </td>
+                                <td><a href="http://doctorcityvn.pythonanywhere.com/all/{{name2.codepatientp}}">{{name2}} </a></td>
+                                <td>{{name2.age}} tuổi, {{name2.City}} </a></td>
+                            </tr>
+                                {% endfor %}
+                            {% endif %}
+                        </table>
+                    </div>
+
+                </div>
+                <div  class="row" >
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    {% if person2 %}
+                        {% for name3 in person2 %}
+                        <h5 id="ttbn_1"><b>Thông tin bệnh nhân - {{name3.namepatient}}:</b></h5>
+                            <ol>
+                                <li ><b >Tuổi:</b> {{name3.age}} </li>
+                                <li ><b id="diachi_1">Địa chỉ</b>: {{name3.place}} </li>
+                                <li ><b id="phongkham_1">Phòng khám:</b> {{name3.phong_id}}-{{name3.phong_id_namediv}} </li>
+                        {% endfor %}
+
+                    {% endif %}
+                    {% if tctq %}
+                        {% for tc1 in tctq %}
+                        {% if forloop.last  %}
+                            <li ><b id="lankham_1">Lần khám </b>: {{tc1.lankham}} </li>
+                            <li ><b id="ngaykham_1">Ngày khám</b>: {{tc1.date}} </li>
+                        {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+                            </ol>
+                </div>
+
+            </div>
+            <div  class="col-xs-12 col-md-1 col-lg-6"  >
+                <div class="row">
+                    {% for name3 in person2 %}
+                    <center><h4 style="margin-bottom:25px;"><b id="ttbn_3">Triệu chứng bệnh nhân</b>:<b> {{name3.namepatient}}<b/></h4></center>
+
+                    {% endfor %}
+
+                </div>
+                <div class="row">
+                    <table border="1">
+                    <thead>
+                        <tr>
+                            <div class="col-xs-4 col-md-4 col-lg-4">
+                                <button id="moback" class="w3-button w3-black"><img src="{% static 'images/left.png' %}" style="max-height:20px"></button>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4">
+                                <button id="moforward" class="w3-button w3-black"><img src="{% static 'images/pause.png' %}" style="max-height:20px"></button>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4">
+                                <button id="mohome" class="w3-button w3-black"><img src="{% static 'images/right.png' %}" style="max-height:20px;max-width:28px"></button>
+                            </div>
+                            <br/>
+                            <br/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    </table>
+                </div>
+
+                <div class="row">
+                    <div  class="col-xs-12 col-md-1 col-lg-6" >
+                        <div class="row">
+
+                            <div  class="col-xs-10 col-md-1 col-lg-10" >
+                                <datalist id="languages">
+                                                    {% for item9 in tc %}
+                                                  <option value="{{ item9.codetrieuchung}}"> {{ item9.trieuchung1}}: {{ item9.codetrieuchung}}</option>
+
+                                                      {% endfor %}
+                                                </datalist>
+                                <form action="" method="post">
+                                                    {% csrf_token %}
+
+
+                                                <input type="text" list="languages" class="co_1" name="co_1" id="co_1" style="width:100%" placeholder="Triệu chứng tổng quát">
+
+                                                </form>
+                            </div>
+                            <div  class="col-xs-2 col-md-2 col-lg-2" >
+                                <a href="#" class="btn btn-xs btn-default" data-toggle="modal" data-target="#basicModal"><b>+</b></a>
+                                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" align="center">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Nhập bổ sung triệu chứng</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="" method="post">
+                                                    {% csrf_token %}
+                                            <div class="modal-body">
+
+                                                <div class="row">
+                                                    <div class="col6">
+                                                        <select class="selectpicker countrypicker" data-live-search="true" name="co1" id="co1">
+                                                            {% for item9 in tc %}
+                                                                <option value="{{ item9.codetrieuchung }}"> {{ item9.trieuchung1}}: {{ item9.codetrieuchung}}</option>
+                                                            {% endfor %}
+                                                            </select>
+                                                    </div><br/>
+                                                    <div class="col6">
+                                                        <center> <input type="submit" value="Nhập" style="background:  #997a00; color: white;width: 100px;"></center>
+                                                    </div>
+                                                </div><br/><br/>
+                                            </div>
+                                            </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="table-wrapper-scroll-y">
+                            <table class="table">
+                                    <thead>
+
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+
+                                        {% for tc1 in tctq %}
+                                            <tr>
+                                    <!--            <td align="center">{{tc1.codetrieuchung_id}}</td>  -->
+
+                                                        {% for item in tc %}
+                                                            {% if item.codetrieuchung == tc1.codetrieuchung_id %}
+
+                                                                <td align="left"> {{ item.trieuchung1}}</td>
+
+                                                            {% endif %}
+                                                        {% endfor %}
+
+
+
+                                                <td align="center">{{tc1.status1}}</td>
+
+                                            </tr>
+                                        {% endfor %}
+
+
+
+
+
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="col-xs-12 col-md-12 col-lg-6" >
+                        <div class="row">
+
+                            <div  class="col-xs-7 col-md-1 col-lg-10" >
+                                <datalist id="languages2">
+                                                    {% for item9 in tc %}
+                                                  <option value="{{ item9.codetrieuchung}}">{{ item9.trieuchung1}}: {{ item9.codetrieuchung}}</option>
+
+                                                      {% endfor %}
+                                                </datalist>
+                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                <input type="text" list="languages2" class="co_1" name="cucbo_1" id="cucbo_1" style="width:100%" placeholder="Triệu chứng cục bộ">
+                                                </form>
+
+                            </div>
+                            <div  class="col-xs-1 col-md-2 col-lg-2" >
+                                <a href="#" class="btn btn-xs btn-default" data-toggle="modal" data-target="#basicModal1"><b>+</b></a>
+                                    <div class="modal fade" id="basicModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" align="center">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel1">Nhập bổ sung triệu chứng cục bộ</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="" method="post">
+                                            {% csrf_token %}
+                                <div class="row">
+                                <div class="col6">
+                                            <select class="selectpicker countrypicker" data-live-search="true" name="co2" id="co2">
+                                                {% for item9 in tc %}
+                                                    <option value="{{ item9.codetrieuchung }}"> {{ item9.trieuchung1}}: {{ item9.codetrieuchung}}</option>
+                                                {% endfor %}
+                                                </select>
+                                </div>
+                                                <br/>
+
+                                <div class="col6">
+
+
+
+                                               <center> <input type="submit" value="Nhập" style="background:  #997a00; color: white;width: 100px;"></center>
+                                </div>
+                                </div>
+                                               <br/>
+                                                <br/>
+                                        </form>
+
+
+
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                      </div>
+                                    </div>
+                                  </div>
+
+                    </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="table-wrapper-scroll-y">
+
+                                <table class="table">
+
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            {% for tc2 in tccb %}
+                                    <tr>
+                          <!--              <td align="center">{{tc2.codetrieuchung_id}}</td> -->
+
+                                                {% for itemcb in tc %}
+                                                    {% if itemcb.codetrieuchung == tc2.codetrieuchung_id %}
+                                                        <td align="left"> {{ itemcb.trieuchung1}}</td>
+                                                    {% endif %}
+                                                {% endfor %}
+                                        <td align="center">{{tc2.status1}}</td>
+
+                                    </tr>
+                                {% endfor %}
+                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div  class="col-xs-12 col-md-1 col-lg-3"  >
+                    <div class="row">
+                        <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                        <div  class="col-xs-12 col-md-1 col-lg-12"  >
+                            <h5 id="kl3">Kết quả khám:</h5>
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-0"  >
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-0"  >
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% if Kluan1 %}
+                        {% for kl1 in Kluan1 %}
+
+                           <textarea class="form-control" id="hotro" rows="3">{{kl1.name_ketluan}} </textarea>
+                            <h6 color="Yellow" style="text-shadow: 2px 2px 1px #87cefa"><b>Bác sỹ:{{kl1.bacsy}} </b></h6>
+                        {% endfor %}
+                    {% endif %}
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    </div>
+                    <div class="row">
+
+                        <div  class="col-xs-7 col-md-1 col-lg-10"  >
+                             <datalist id="languagesxlkc">
+                                                    {% for tc1 in kc %}
+                                                  <option value="{{ tc1.tenxlkc}}">
+
+                                                      {% endfor %}
+                                                </datalist>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                <input type="text" list="languagesxlkc" class="co_1" name="xlkc_9" id="xlkc_9" style="width:100%" placeholder="Xử lý khẩn cấp">
+                                                </form>
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-2"  >
+                            <a href="#" class="btn btn-xs btn-default" data-toggle="modal" data-target="#basicModal2"><b>+</b></a>
+                            <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" align="center">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel1">Nhập bổ sung xử lý khẩn cấp</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                        <div class="row">
+                        <div class="col6">
+                                    <select class="selectpicker countrypicker" data-live-search="true" name="xlkc3" id="xlkc3">
+                                        {% for item9 in Xlkc2 %}
+                                            <option value="{{ item9.tenxlkc }}"> {{ item9.tenxlkc}}: {{ item9.codekc}}</option>
+                                        {% endfor %}
+                                        </select>
+                        </div>
+
+
+                        <div class="col6">
+
+
+
+                                       <center> <input type="submit" value="Nhập" style="background:  #997a00; color: white;width: 100px;"></center>
+                        </div>
+                        </div>
+                                       <br/>
+                                        <br/>
+                                </form>
+
+
+
+
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="table-wrapper-scroll-y">
+
+                            <table class="table">
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for tc1 in Xlkc1 %}
+                                    <tr>
+                            <!--            <td align="center">{{tc1.codetrieuchung_id}}</td>  -->
+
+
+                                                        <td align="left"> {{ tc1.name_xlkc}}</td>
+
+
+
+
+                                        <td align="center">{{tc1.status1}}</td>
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+                        </div>
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    </div>
+                    <div class="row">
+
+
+                        <div  class="col-xs-7 col-md-1 col-lg-10"  >
+                             <datalist id="ldichvu">
+                                 {% for tdv in sv %}
+                                    <option value="{{ tdv.codeservice }}"> {{ tdv.name_serv}}</option>
+
+                                  {% endfor %}
+                              </datalist>
+                             <form action="" method="post">
+                                {% csrf_token %}
+                                <input type="text" list="ldichvu" class="co_1" name="sdichvu" id="sdichvu" style="width:100%;" placeholder="Dịch vụ">
+                                </form>
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-2"  >
+                            <a href="#" class="btn btn-xs btn-default" data-toggle="modal" data-target="#basicModal3"><b>+</b></a>
+                            <div class="modal fade" id="basicModal3" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" align="center" width="600px">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel3">Nhập bổ sung dịch vụ</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                        <div class="row">
+                        <div class="col6">
+                                    <select class="selectpicker countrypicker" data-live-search="true" name="dv3" id="dv3">
+                                        {% for item9 in sv %}
+                                            <option value="{{ item9.codeservice }}"> {{ item9.name_serv}}: {{ item9.codeservice}}</option>
+                                        {% endfor %}
+                                        </select>
+                        </div>
+                                        <br/>
+
+                        <div class="col6">
+
+
+
+                                       <center> <input type="submit" value="Nhập" style="background:  #997a00; color: white;width: 100px;"></center>
+                        </div>
+                        </div>
+                                       <br/>
+                                        <br/>
+                                </form>
+
+
+
+
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table-wrapper-scroll-y">
+
+                        <table class="table" >
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                        {% for sv1 in service1 %}
+                                    <tr>
+                        <!--                <td>{{sv1.codeservice_id}}</td> -->
+
+                                                {% for item1 in sv %}
+                                                    {% if item1.codeservice == sv1.codeservice_id %}
+
+                                                        <td align="left"> {{ item1.name_serv}}</td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+                                        <td align="left">{{sv1.status}}</td>
+
+                                    </tr>
+                                {% endfor %}
+
+                </table>
+                        </div>
+                        <hr style="margin-top:0px;margin-margin:0px; height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    </div>
+                    <div class="row">
+
+
+
+                        <div  class="col-xs-6 col-md-1 col-lg-2"  >
+                            <a href="#" class="btn btn-xs btn-default" data-toggle="modal" data-target="#basicModal4"><b>+</b></a>
+
+                        <div class="modal fade" id="basicModal4" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" align="center">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel3">Nhập bổ sung đơn thuốc</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                            <div class="row">
+                            <div class="col6">
+                                        <select class="selectpicker countrypicker" data-live-search="true" name="dt3" id="dt3">
+                                            {% for item9 in dt %}
+                                                <option value="{{ item9.codemedicine }}"> {{ item9.thc}}: {{ item9.tbc}}:{{ item9.dvt}} </option>
+                                            {% endfor %}
+                                            </select>
+                            </div>
+                                            <br/>
+                            <div class="row">
+                                <div class="col6">
+                                    <lable >Số lượng  :</lable><input type="text" name="soluongthuoc" syle="margin-left:50px;"/><br/>
+                                    <lable >HD sử dụng:</lable><input type="text" name="huongdansudung" syle="margin-left:50px;"/><br/>
+                                    <lable >Bác sỹ    :</lable><input type="text" name="bacsy" syle="margin-left:150px;"/><br/>
+                                 </div>
+                                 <br/>
+                            </div>
+
+                            <div class="col6">
+
+
+
+                                           <center> <input type="submit" value="Nhập" style="background:  #997a00; color: white;width: 100px;"></center>
+                            </div>
+                            </div>
+                                           <br/>
+                                            <br/>
+                                    </form>
+
+
+
+
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div  class="col-xs-6 col-md-1 col-lg-10"  >
+                            <button onclick="myFunctionPrinter()" style="margin-top:-5px;margin-bottom:2px"><img src="{% static 'images/print-icon.png' %}" height="30" width="30"></button>
+                            </div>
+                    </div>
+                    <div class="row" id="message">
+                        <div class="table-wrapper-scroll-y">
+                            <table class="table">
+                                  <thead>
+
+
+
+                                            </thead>
+                                  <tbody>
+                                                <tr>
+
+                                                    <td>
+                                                    <div id="tenhoatchat_1">Tên hoạt chất</div>
+                                                    <div id="tenthuongmai_1">Tên hoạt thương mại</div>
+                                                    <div id="huongdansudung_1">Hướng dẫn sử dụng</div>
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: red;" id="soluong_1">Số lượng</div>
+                                                    <div><br/></div>
+                                                    <div></div>
+                                                    </td>
+                                                    <td>
+                                                        <div><br/></div>
+                                                        <div><br/></div>
+                                                    <div id="soluong_1">Đơn vị</div>
+                                                    </td>
+
+
+                                                </tr>
+                                                {% for tc1 in donthuoc1 %}
+                                                <tr>
+
+                                                    <td>
+                                                    <div>{{ tc1.codedonthuoc.thc}}</div>
+                                                    <div>{{ tc1.codedonthuoc.tbd}}</div>
+                                                    <div>{{ tc1.huongdan}}</div>
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: red;">{{ tc1.soluong}}</div>
+                                                    <div><br/></div>
+                                                    <div><br/></div>
+
+                                                    </td>
+                                                    <td>
+
+                                                    <div>{{ tc1.codedonthuoc.dvt}}</div>
+                                                    <div><br/></div>
+                                                    <div><br/></div>
+                                                    </td>
+
+                                                </tr>
+
+                                                {% endfor %}
+
+
+                                   </tbody>
+                            </table>
+                        </div>
+
+
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    <p id="message1"> Test1 </p>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div  class="col-xs-12 col-md-1 col-lg-2"  >
+                            <h5 ><b>Tin nhắn:</b></h5>
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-4"  >
+                        </div>
+                        <div  class="col-xs-1 col-md-1 col-lg-6"  >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <textarea class="form-control" id="hotro" rows="3">Chat here</textarea>
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        <script>
+            $(window).load(function() {
+                $("#myUL").hide();
+            });
+
+        </script>
+
+
+        <script>
+        var ten="{{slug}}"
+            function myFunctionPrinter() {
+                window.open("http://doctorcityvn.pythonanywhere.com/printer/" + ten, "_blank");
+            }
+
+        </script>
+                <script>
+        $(document).ready(function() {
+            var ten="{{slug}}"
+
+            var myVar = setInterval(ajaxCall, 1000);
+
+
+            function ajaxCall() {
+                $.ajax({
+                     type:"GET",
+                     url:"http://doctorcityvn.pythonanywhere.com/aj/" + ten + "/",
+                     data: {
+
+                            },
+                     success: function(){
+                         $('#message1').load("http://doctorcityvn.pythonanywhere.com/alluser/")
+                        }
+                });
+                return false;
+
+            }
+
+        });
+        </script>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+</html>

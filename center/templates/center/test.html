@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"  media="screen">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+    <link href="{% static 'css/onsite.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function() {
+             // executes when HTML-Document is loaded and DOM is ready
+             $("ul").hide();
+             $("#pan2").hide();
+            $("#pan3").hide();
+            $("#pan10").hide();
+            $("#panthongtin").hide();
+
+        });
+
+        $(document).ready(function(){
+          $("#tiepnhan").click(function(){
+            $("ul").show();
+            $("#home").show();
+
+            $("#googleMap").hide();
+
+            $("button").hide();
+          });
+          $("#Chapnhan").click(function(){
+            $("ul").show();
+            $("#table1").hide();
+
+          });
+          $("#hoanthienhoso").click(function(){
+            $("ul").hide();
+            $("#pan2").show();
+            $("#pan1").hide();
+
+          });
+          $("#mohosokham").click(function(){
+            $("ul").hide();
+            $("#pan3").show();
+            $("#pan31").show();
+            $("#pan2").hide();
+            $("#pan1").hide();
+
+          });
+          $("#mothongtin").click(function(){
+
+            $("#panthongtin").show();
+
+          });
+          $("#luuthongtin").click(function(){
+
+            $("#pan1").show();
+            $("#pan2").hide();
+
+          });
+        });
+    </script>
+
+
+
+     <script>
+        function Map1()
+        {
+            var myCenter=15,105;
+            var marker=new google.maps.Marker({
+            position:myCenter,
+            icon:'pinkball.png'
+            });
+
+            marker.setMap(map);
+        }
+    </script>
+      <script src="http://maps.googleapis.com/maps/api/js?key=#{AIzaSyD5wAflNNOYGLM4FiA9HWXZvYcPiyGi2sw}&sensor=false">
+        </script>
+        <script>
+          //Khoi tao Map
+
+
+            function initialize()
+            {
+            var myCenter=new google.maps.LatLng(21,106);
+            var mapProp = {
+              center:myCenter,
+              zoom:5,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+              };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            var marker=new google.maps.Marker({
+              position: myCenter,
+              //icon: "pinkball.png",
+              //title: "Landmark 72 ^_^",
+              //draggable: true,
+              //animation:google.maps.Animation.BOUNCE,
+              });
+
+            marker.setMap(map);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Doctorcity</a></h6>
+      <hr class="style2">
+      <a href="http://doctorcityvn.pythonanywhere.com/test/"><img src="{% static 'images/doctor.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/about/"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <a href="#"><img src="{% static 'images/service.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Services</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/all/BN1/#"><img src="{% static 'images/benhnhan.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Lịch sử khám bệnh</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/staff/"><img src="{% static 'images/datacenter.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thanh toán</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/onsite/"><img src="{% static 'images/doctorathome.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thông báo từ trung tâm</a>
+
+      <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg" onclick="document.getElementById('id01').style.display='block'">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a>
+     <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+        <div class="row">
+
+                    <div class="col-sm-3">
+                        <button id="moback" class="w3-button w3-black"><img src="{% static 'images/left.png' %}" style="max-height:28px">Back</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="moforward" class="w3-button w3-black"><img src="{% static 'images/home.jpg' %}" style="max-height:28px">Home</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button id="mohome" style="margin-left:0px; background-color: grey-light;"><img src="{% static 'images/right.png' %}" style="max-height:28px;max-width:28px">Forward</button>
+                    </div>
+
+
+                    <input type="text" class="form-control" id="thongtinhanhchinh" placeholder="Thông tin hành chính">
+                    <input type="text" class="form-control" id="thongtinbaohiem" placeholder="Thông tin bảo hiểm ">
+                    <textarea class="form-control" rows="3" id="thongtinbenhdamac" placeholder="Tiền sử bệnh đã mắc "></textarea>
+                    <textarea class="form-control" rows="3" id="thongtinbenhsu" placeholder="Bệnh sử (diễn biến bệnh đã mắc) "></textarea>
+
+        </div>
+
+        <div  class="row">
+
+            <div class="panel panel-default" id="pan1" >
+                <div class="panel-body" style="max-height: 750px;">
+                    <button type="button" class="btn btn-info" id="tiepnhan">Tiếp nhận</button>
+                    <div id="googleMap" class="z-depth-1-half map-container" style="height: 200px; margin-top: 25px;"></div>
+                    <button type="button" class="btn btn-info" id="mohosokham" style="margin-top: 25px;">Mở hồ sơ khám</button>
+                    <button type="button" class="btn btn-info" id="hoanthienhoso" style="margin-top: 25px;">Hoàn thiện hồ sơ khám</button>
+                </div>
+            </div>
+            <div class="panel panel-default" id="pan2">
+                <div class="panel-body">
+                    <button h1 type="button" class="btn">Bệnh sử (Diễn biến bệnh hiện tại)</button>
+                    <textarea class="form-control" rows="3" id="benhsu"></textarea>
+                    <button type="button" class="btn" style="margin-top: 25px;">Khám bệnh</button>
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Dấu hiệu sinh tồn">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Triệu chứng toàn thần ">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Triệu chứng tuần hoàn">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Hô hấp">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tiêu hóa">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tiết niệu sinh dục">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tâm thần kinh">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Cơ xương khớp">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Cơ quan khác">
+                    <button type="button" class="btn">Kết quả kệnh lâm sàng</button>
+                    <textarea class="form-control" rows="3" id="ketquacanlamsang" placeholder="Enter text"></textarea>
+                    <button type="button" class="btn">Chẩn đoán</button>
+                    <textarea class="form-control" rows="3" id="chandoan" placeholder="Enter text"></textarea>
+                    <button type="button" class="btn">Xử lý</button>
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Item text">
+                    <button type="button" class="btn" id="luuthongtin">Lưu thông tin</button>
+
+
+
+                </div>
+            </div>
+
+            <div  class="row" ">
+
+
+                <div class="panel panel-default" id="pan3">
+                        <div class="panel-body">
+                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                <button id="mothongtin" class="w3-button w3-black"><img src="{% static 'images/thongtin.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Tin</button>
+
+                                <button id="mobenhsu" class="w3-button w3-black"><img src="{% static 'images/benhsu.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">B.Sử</button>
+
+
+                                <button id="motrieuchung" class="w3-button w3-black"><img src="{% static 'images/trieuchung.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Chứng</button>
+
+
+                                <button id="moxuly" class="w3-button w3-black"><img src="{% static 'images/xuly.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">X.lý</button>
+
+                                <button id="modichvu" class="w3-button w3-black"><img src="{% static 'images/dichvu.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">D.Vụ</button>
+                                <button id="modonthuoc" class="w3-button w3-black"><img src="{% static 'images/donthuoc.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Đ.Thuốc</button>
+                                <button id="mochat" class="w3-button w3-black"><img src="{% static 'images/chat.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Chat</button>
+                            </div>
+                        </div>
+                </div>
+
+
+        </div>
+
+
+            <div class="panel panel-default" id="pan10">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+
+              <li class="nav-item">
+
+                <a class="nav-link active" data-toggle="tab" href="#home">B.Nhân</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{st1}}" data-toggle="tab" href="#menu1">Mở hồsơ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{st3}}" data-toggle="tab" href="#menu2">Hoàn thiện hồsơ</a>
+              </li>
+            </ul>
+
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active container" id="home">
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-4">
+                            <div id="tabhome">
+                            <table class="table" id="table1">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "typeid">Phòng ID:</lable></td>
+                                            <td>
+                                                <select name="phongidstaff">
+                                                {% for entry in namediv_list %}
+                                                 <option value="{{ entry.id }}">{{ entry.namediv }}</option>
+                                                {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><lable for "hotenstaff">Họ tên:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="hotenstaff" value="Nguyễn Thị Hằng"></td>
+                                        </tr>
+
+                                            <td><lable for "tuoistaff">Tuổi:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="tuoistaff" value="43"></td>
+
+                                        <tr>
+                                            <td><lable for "diachistaff">Địa chỉ:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="diachistaff" value="41 Thanh Xuân Bắc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "thanhphostaff">T.phố:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="thanhphostaff" value="Hà Nội"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Tên dịch vụ:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="tendichvu" value="cấp cứu khẩn cấp"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "chatluong">Chất lượng:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="chatluong" value="hạng 5"></td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                            </div>
+                        <center><input type="submit" value="Từ chối">
+                        <input type="button" class="btn btn-info" value="Chấp nhận" id="Chapnhan">
+                        </center>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="tab-pane container fade " id="menu1">
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-4">
+                        <br/>
+                        <br/>
+                            <table class="table table-striped">
+                                    <thead>
+                                        <tr> <th colspan="3"><b>Đơn thuốc</b></th> </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "codedonthuoc">Code    :</lable></td>
+                                            <td><input type="text" name="codedonthuoc" Placeholder="KSP"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tenthuoc">Tên thuốc    :</lable></td>
+                                            <td><input type="text" name="tenthuoc" value="Paracetamol"></td>
+                                        </tr>
+
+                                        <tr>
+
+                                              <label for="lieudung">Liều dùng    :</label>
+                                              <textarea class="form-control" rows="5" name="lieudung">2 viên ngày</textarea>
+
+
+                                        </tr>
+                                        <tr>
+
+                                              <label for="congdung_staff">Công dụng    :</label>
+                                              <textarea class="form-control" rows="5" name="congdung_staff">giảm sốt, giảm đau</textarea>
+
+
+                                        </tr>
+                                        <tr>
+                                              <label for="tacdungphu">Tác dụng phụ    :</label>
+                                              <textarea class="form-control" rows="5" name="tacdungphu"> buồn ngủ </textarea>
+                                        </tr>
+
+                                    </tbody>
+                            </table>
+                            <input type="submit" value="Nhập thuốc">
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="tab-pane container fade " id="menu2">
+                    <form action="/staff/" method="get">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        <br/>
+                        <br/>
+                            <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3"><b>Dịch vụ</b></th>
+                                        </tr>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "madichvu">Mã dịch vụ    :</lable></td>
+                                            <td><input type="text" name="madichvu" Placeholder="Mã dịch vụ"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Tên dịch vụ    :</lable></td>
+                                            <td><input type="text" name="tendichvu" Placeholder="Tên dịch vụ"></td>
+                                        </tr>
+
+
+                                    </tbody>
+                            </table>
+                            <input type="submit" value="Nhập dịch vụ">
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-sm-10">
+
+            </div>
+            <div class="col-sm-1">
+
+
+
+
+
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div  class="row">
+
+            <div class="col-sm-2">
+                </div>
+                <br/>
+
+
+
+
+        </div>
+    <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "290px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{% static 'images/loginavatar.png' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="form-group">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" class="form-control" checked="checked" name="remember"> Remember me
+                      </label>
+
+            </div>
+
+            <div class="form-group">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </form>
+      // index 1
+
+
+</div>
+    <script>
+            function Chapnhan() {
+              document.getElementById("tabhome").hide();
+
+            }
+
+
+    </script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> Doctorcity</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+
+
+    <title>Document</title>
+
+    <style type="text/css">
+
+    .txtdeepshadow {
+  text-align: center;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 25px;
+  height: 50px;
+  padding-top: 8px;
+  color: #FFD700;
+  background-color: #87CEFA;
+  letter-spacing: .1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 7px 0 #181818, 0 7px 0 #161616, 0 7px 0 #141414, 0 7px 0 #121212, 0 8px 15px rgba(0, 0, 0, 0.9);
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Doctorcity</a></h6>
+      <hr class="style2">
+      <a href="http://doctorcityvn.pythonanywhere.com"><img src="{% static 'images/doctor.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/about/"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <a href="#"><img src="{% static 'images/service.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Services</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/all/BN1/#"><img src="{% static 'images/benhnhan.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Clients</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/staff/"><img src="{% static 'images/datacenter.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Data center</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/onsite/"><img src="{% static 'images/doctorathome.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Doctor at Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/contact/"><img src="{% static 'images/contact.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Contact</a>
+    </div>
+
+
+    <div class="container">
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+        <div  class="row">
+            <div class="col-sm-2">
+                <center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="responsive-img" style="max-height:90px"></center>
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+                    <center><h1  class="txtdeepshadow">Nhập số liệu - Database</h1></center>
+
+                </div>
+        </div>
+<br/>
+
+        <div  class="row">
+            <div class="col-sm-2">
+                </div>
+            <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+              <li class="nav-item">
+
+                <a class="nav-link {{st1}} border border-primary border-bottom-0" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bệnh Nhân</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{st1}}" data-toggle="tab" href="#menu1">Thuốc</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{st3}}" data-toggle="tab" href="#menu2">Dịch vụ</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane h-100 p-3 {{st1}} border border-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-2">
+                </div>
+                        <div class="col-sm-4">
+                            <br/>
+                            <br/>
+                            <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th th colspan="2"><b>Thông tin bệnh nhân</b></th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "typeid">Phòng ID:</lable></td>
+                                            <td>
+                                                <select name="phongidstaff">
+                                                {% for entry in namediv_list %}
+                                                 <option value="{{ entry.id }}">{{ entry.namediv }}</option>
+                                                {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "code">Code    :</lable></td>
+                                            <td><input type="text" name="codestaff" value="BN{{bncount}}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "hotenstaff">Họ tên    :</lable></td>
+                                            <td><input type="text" name="hotenstaff" value="Nguyễn Thị Hằng"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tuoistaff">Tuổi    :</lable></td>
+                                            <td><input type="text" name="tuoistaff" value="43"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "diachistaff">Địa chỉ    :</lable></td>
+                                            <td><input type="text" name="diachistaff" value="41 Thanh Xuân Bắc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "thanhphostaff">Thành phố :</lable></td>
+                                            <td><input type="text" name="thanhphostaff" value="Hà Nội"></td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        <input type="submit" value="Nhập dữ liệu bệnh nhân">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="tab-pane container fade {{st2}}" id="menu1">
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-2">
+                </div>
+                        <div class="col-sm-4">
+                        <br/>
+                        <br/>
+                            <table class="table table-striped>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3"><b>Đơn thuốc</b></th>
+                                        </tr>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "codedonthuoc">Code    :</lable></td>
+                                            <td><input type="text" name="codedonthuoc" Placeholder="KSP"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tenthuoc">Tên thuốc    :</lable></td>
+                                            <td><input type="text" name="tenthuoc" value="Paracetamol"></td>
+                                        </tr>
+
+                                        <tr>
+
+                                              <label for="lieudung">Liều dùng    :</label>
+                                              <textarea class="form-control" rows="5" name="lieudung">2 viên ngày</textarea>
+
+
+                                        </tr>
+                                        <tr>
+
+                                              <label for="congdung_staff">Công dụng    :</label>
+                                              <textarea class="form-control" rows="5" name="congdung_staff">giảm sốt, giảm đau</textarea>
+
+
+                                        </tr>
+                                        <tr>
+
+                                              <label for="tacdungphu">Tác dụng phụ    :</label>
+                                              <textarea class="form-control" rows="5" name="tacdungphu"> buồn ngủ </textarea>
+
+
+                                        </tr>
+
+                                    </tbody>
+                            </table>
+                            <input type="submit" value="Nhập thuốc">
+                        </div>
+
+
+
+                </div>
+
+                <div class="tab-pane container fade {{st3}}" id="menu2">
+                    <form action="/staff/" method="get">
+                    <div class="col-sm-2">
+                    </div>
+                        <div class="col-sm-4">
+                        <br/>
+                        <br/>
+                            <table class="table table-striped>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3"><b>Dịch vụ</b></th>
+                                        </tr>
+
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "madichvu">Mã dịch vụ    :</lable></td>
+                                            <td><input type="text" name="madichvu" Placeholder="Mã dịch vụ"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Tên dịch vụ    :</lable></td>
+                                            <td><input type="text" name="tendichvu" Placeholder="Tên dịch vụ"></td>
+                                        </tr>
+
+
+                                    </tbody>
+                            </table>
+                        <input type="submit" value="Nhập dịch vụ">
+                        </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div  class="row">
+
+        </div>
+
+
+
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+{% extends 'registration/base.html' %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{% static 'css/user1.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!------ Include the above in your HEAD tag ---------->
+<script>
+       $(document).ready(function() {
+             // executes when HTML-Document is loaded and DOM is ready
+             $("#right").hide();
+
+
+
+        });
+        $(document).ready(function(){
+
+
+
+          $("#showregister").click(function(){
+
+            $("#right").show();
+            $("#left").hide();
+            $("#showregister").hide();
+
+
+
+          });
+        });
+
+
+</script>
+</head>
+<body>
+<div class="container register">
+
+                <div class="row">
+                    <div class="col-md-3 register-left" id="left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are 30 seconds away from serving your health!
+
+                        </p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="text"  id="username" name="username" placeholder="user *" value="" style="margin-top: 25px;" />
+                            <input type="password" name="password" id="password" placeholder="Password *" value="" style="margin-top=0px;"/>
+
+                            <input type="submit" value="Login"  style="margin-top: 35px;" /><br/>
+
+                        </form>
+                        <input  name="login1" id="showregister" value="Register"  onclick=" relocate_home()" style="margin-top: 35px; align: center" /><br/>
+                        <script>
+                            function relocate_home()
+                            {
+                                 location.href = "http://doctorcityvn.pythonanywhere.com/accounts/signup/";
+                            }
+                        </script>
+
+                    </div>
+                    <div class="col-md-9 register-right" id="right">
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,819 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <link href="{% static 'css/user.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <script src="{% static 'js/nhap.js' %}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- icon -->
+    <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+
+
+    <style>
+
+    div.mau {
+        background: white;
+        color: black;
+
+    }
+    }
+    div {
+      background-color: lightblue;
+    }
+
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 350px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+       body {
+           background-image: linear-gradient(to right bottom, rgba(255,0,0,0), 	rgb(134, 121, 121));
+       }
+       .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+    </style>
+<style>
+.btn1 {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn1:hover {
+  background-color: RoyalBlue;
+}
+.switch {
+    width: 100px;
+    height: 10px;
+    position: relative;
+}
+.switch label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #a5a39d;
+    border-radius: 40px;
+    box-shadow:
+        inset 0 3px 8px 1px rgba(0,0,0,0.2),
+        0 1px 0 rgba(255,255,255,0.5);
+}
+.switch label:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -8px; right: -8px; bottom: -8px; left: -8px;
+    border-radius: inherit;
+    background: #ccc; /* Fallback */
+    background: linear-gradient(#f2f2f2, #ababab);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3),
+        0 1px 1px rgba(0,0,0,0.25);
+}
+.switch label:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -18px; right: -18px; bottom: -18px; left: -18px;
+    border-radius: inherit;
+    background: #eee; /* Fallback */
+    background: linear-gradient(#e5e7e6, #eee);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-filter: blur(1px); /* Smooth trick */
+    filter: blur(1px); /* Future-proof */
+}
+.switch label i {
+    display: block;
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: inherit;
+    background: #b2ac9e; /* Fallback */
+    background: linear-gradient(#f7f2f6, #b2ac9e);
+    box-shadow:
+        inset 0 1px 0 white,
+        0 0 8px rgba(0,0,0,0.3),
+        0 5px 5px rgba(0,0,0,0.2);
+}
+.switch label i:after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 50%;
+    background: #d2cbc3; /* Fallback */
+    background: linear-gradient(#cbc7bc, #d2cbc3);
+    border-radius: inherit;
+}
+.switch label i:before {
+    content: "off";
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    margin-top: -12px;
+    color: #666; /* Fallback */
+    color: rgba(0,0,0,0.4);
+    font-style: normal;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 #bcb8ae, 0 -1px 0 #97958e;
+}
+.switch input:checked ~ label { /* Background */
+    background: #9abb82;
+}
+
+.switch input:checked ~ label i { /* Toggle */
+    left: auto;
+    right: -1%;
+}
+
+.switch input:checked ~ label i:before { /* On/off */
+    content: "on";
+    right: 115%;
+    color: #82a06a;
+    text-shadow: 0 1px 0 #afcb9b, 0 -1px 0 #6b8659;
+}
+td.yellow {
+     color: #ffff00;
+     font-weight:bold;
+}
+th.yellow {
+     color: #00e6e6;
+     font-weight:bold;
+}
+td.black {
+     color: #00001a;
+     font-weight:bold;
+}
+th.black {
+     color: #00001a;
+     font-weight:bold;
+}
+textarea.trang {
+ width: 100%;
+ height: 100px;
+ background-color: 	#FFFFFF;
+ font-size: 1em;
+ font-weight: bold;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ border: 1px solid black;
+}
+.form-control[readonly].no-gray {
+  background-color:white;
+}
+
+</style>
+    <title>Document</title>
+
+<script>
+$(document).ready(function() {
+
+
+
+
+       var x="{{trang10}}";
+
+ $("#trangtrieuchung").hide();
+        $("#trangxlkc").hide();
+        $("#trangdichvu").hide();
+        $("#trangdonthuoc").hide();
+        $("#trangchat").hide();
+        $("#trangkhoa").hide();
+
+       if (x == "k"){
+        $("#trangkhoa").show();
+       }
+       if (x == "dv"){
+        $("#trangdichvu").show();
+       }
+        if (x == "dt"){
+        $("#trangdonthuoc").show();
+       }
+        if (x == "xlkc"){
+        $("#trangxlkc").show();
+       }
+       if (x == "tt"){
+        $("#trangtrieuchung").show();
+       }
+
+
+
+
+    });
+    </script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav" style="width:250px;">
+       <button href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Close</button>
+
+       <a class="navbar-brand" href="#" >
+           <center>
+          <img src="{% static 'images/loginavatar.png' %}" style="max-height:80px"> {{ current_user }}
+          </center>
+
+        </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/menu/" style="text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/about/" style="margin-top:20px; text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+
+
+
+     <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg" style="margin-top:20px; text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+
+    </div>
+
+
+    <div class="container">
+
+      <div  class="row" style="background:  #a3a3c2;">
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+
+
+                    <button id="clicktrieuchung"  class="btn btn-danger btn-md" style="background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);">
+  <div style="max-height:40px;"><i class="fa fa-address-book"></i></div><div style="text-indent: -10px;">Triệu</div><div style="margin-left: 0px;">chứng</div></button>
+
+<button id="clickxlkc"  class="btn btn-primary btn-md" style=" background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);">
+  <div style="max-height:40px;"><i class="fa fa-book-open"></i></div><div style="text-indent: -5px;">Xlk</div><div style="text-indent: -5px;">cấp</div></button>
+
+<button id="clickdichvu"  class="btn btn-danger btn-md" style=" background:  linear-gradient(to top, #336699 15%, #ffffff 100%);">
+  <div style="max-height:40px;"><i class="fa fa-heartbeat"></i></div><div style="text-indent: -7px;">Dịch</div><div style="text-indent: -7px;">vụ</div></button>
+
+
+<button id="clickdonthuoc"  class="btn btn-primary btn-md" style=" background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);">
+  <div style="max-height:40px;"><i class="fa fa-ambulance"></i></div><div style="text-indent: -7px;">Đơn</div><div style="text-indent: -7px;">thuốc</div></button>
+
+
+
+<button id="clickchat"  class="btn btn-danger btn-md" style=" background:  linear-gradient(to top, #336699 15%, #ffffff 100%);">
+  <div style="max-height:40px;"><i class="fa fa-hospital"></i></div><div style="text-indent: -5px;">..</div><div style="text-aling: -7px;">Khoa</div></button>
+
+
+
+        </div>
+
+        <div class="panel panel-default" id="trangtrieuchung" style="height: 400px;">
+                <div  class="mau">
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-1 col-md-1">
+                            </div>
+                            <div class="col-sm-2 col-md-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th   colspan="3"><b>Triệu chứng</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ><lable for "matrieuchung">Mã t.chứng</lable></td>
+                                    <td><input type="text" name="matrieuchung" Placeholder="Mã triệu chứng"></td>
+                                </tr>
+                                <tr>
+                                    <td ><lable for "tentrieuchung">Tên t.chứng</lable></td>
+                                    <td><input type="text" name="tentrieuchung" Placeholder="Tên triệu chứng"></td>
+                                </tr>
+                                <tr>
+                                    <td ><lable for "Symptom">Tên tiếng Anh</lable></td>
+                                    <td><input type="text" name="nhomcoquan" Placeholder="Symptom" autocomplete="off"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <center><br/><input type="submit" value="Nhập tên triệu chứng" style="background:  #997a00; color: white;width: 200px;"></center>
+
+                    </form>
+                    </div>
+                    <br/>
+
+
+                <div class="table-wrapper-scroll-y">
+                <table class="table">
+
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Tên t.chứng</th>
+                                <th>Tên tiếng Anh</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for item9 in tc %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codetrieuchung}}</td>
+                                    <td align="left"> {{ item9.trieuchung1}}</td>
+                                    <td align="left"> {{ item9.nhomcoquan}}</td>
+
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+
+                </div>
+                <br/>
+                <br/>
+        </div>
+        </div>
+
+        <div class="panel panel-default" id="trangxlkc" style="height: 400px;">
+                <div class="mau">
+                    <br/>
+
+                    <form action={% url 'Staff' %} method="get">
+                        <div class="col-sm-1 col-md-1">
+                            </div>
+                            <div class="col-sm-2 col-md-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="3"><b>Xử lý khẩn cấp</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ><lable for "maxlkc">Mã xử lý khẩn cấp    :</lable></td>
+                                    <td><input type="text" name="maxlkc" Placeholder="Mã xử lý khẩn cấp"></td>
+                                </tr>
+                                <tr>
+                                    <td ><lable for "tenxlkc">Tên xử lý khẩn cấp    :</lable></td>
+                                    <td><input type="text" name="tenxlkc" Placeholder="Tên xử lý khẩn cấp"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <center><br/><input type="submit" value="Nhập XLKC" style="background:  #997a00; color: white;width: 200px;"></center>
+                    </form>
+
+                    <br/>
+                    </div>
+                <div class="table-wrapper-scroll-y">
+            <table class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                                <th>Mã xử lý khẩn cấp</th>
+                                <th>Tên xử lý khẩn cấp</th>
+                                <th>Tên tiếng Anh</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+
+                                {% for item9  in Xlkc1 %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codekc}}</td>
+                                    <td align="left"> {{ item9.tenxlkc}}</td>
+                                    <td > </td>
+
+
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+
+                </div>
+                </div>
+
+
+
+            </div>
+        <div class="panel panel-default" id="trangdichvu" style="height: 400px;">
+                <div class="mau">
+                    <br/>
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-1 col-md-1">
+                            </div>
+                            <div class="col-sm-2 col-md-4">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="3"><b>Dịch vụ</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ><lable for "madichvu">Mã dịch vụ    :</lable></td>
+                                    <td><input type="text" name="madichvu" Placeholder="Mã dịch vụ"></td>
+                                </tr>
+                                <tr>
+                                    <td ><lable for "tendichvu1">Tên dịch vụ    :</lable></td>
+                                    <td><input type="text" name="tendichvu1" Placeholder="Tên dịch vụ"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <center><br/><input type="submit" value="Nhập dịch vụ" style="background:  #997a00; color: white;width: 200px;"></center>
+                    </form>
+                    <br/>
+                    </div>
+                    <div class="table-wrapper-scroll-y">
+            <table class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                                <th>Mã dịch vụ</th>
+                                <th>Tên dịch vụ</th>
+                                <th>Tên tiếng Anh</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+
+                                {% for item9  in dichvu5 %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codeservice}}</td>
+                                    <td align="left"> {{ item9.name_serv}}</td>
+                                    <td > </td>
+
+
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+</div>
+                </div>
+
+                <br/>
+        </div>
+
+
+
+            <div class="panel panel-default" id="trangdonthuoc" >
+                        <div class="mau">
+                            <div class="col-sm-2 col-md-2"">
+                            </div>
+                            <div class="col-sm-4 col-md-6">
+
+                            <form action="/staff/" method="get">
+                            </br>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th  style="text-align:center" colspan="3"><b>Đơn thuốc</b></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="black"><lable for "codedonthuoc">Code:</lable></td>
+                                            <td><input type="text" name="codedonthuoc" Placeholder="KSP"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="black"><lable for "tenthuoc">T.thuốc:</lable></td>
+                                            <td><input type="text" name="tenthuoc" value="Paracetamol"></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                            <label for="lieudung" >Liều dùng    :</label>
+                                            <br/>
+                                            <textarea class="trang" rows="2" name="lieudung" style="background-color: white;">2 viên ngày</textarea>
+                                            <br/>
+
+
+                                            <label for="congdung_staff" >Công dụng    :</label>
+                                            <br/>
+                                            <textarea class="trang" rows="3" name="congdung_staff">giảm sốt, giảm đau</textarea>
+                                            <br/>
+
+                                            <label for="tacdungphu" >Tác dụng phụ    :</label>
+                                            <br/>
+                                            <textarea class="trang" rows="3" name="tacdungphu"> buồn ngủ </textarea>
+                                            <br/>
+
+                                        <br/>
+                                <center><input type="submit" value="Nhập thuốc" style="background:  #997a00; color: white; width: 200px;"></center>
+                            </form>
+                            </div>
+                        </div>
+                        <br/>
+            </div>
+
+
+
+            <div class="panel panel-default" id="trangchat" style="height: 400px;">
+                        <div class="panel-body" style="background-color: {{ pancolor }}; max-height: 750px; height: 750px;">
+                        <div class="col-sm-2 col-md-2"">
+                            </div>
+                            <div class="col-sm-4 col-md-6">
+
+
+                <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="Chat here"></td>
+                <br/>
+                <br/>
+                <textarea class="trang" rows="10" id="chat"></textarea>
+                <br/>
+
+
+                </div>
+                </div>
+
+            </div>
+
+                <div class="panel panel-default" id="trangkhoa" style="height: 400px;">
+                <div class="mau">
+
+
+                    <form action="/staff/" method="get">
+                        <div class="col-sm-1 col-md-1">
+                            </div>
+                            <div class="col-sm-2 col-md-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th  colspan="3"><b>Các khoa khám bệnh</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td ><lable for "makhoa">Mã khoa    :</lable></td>
+                                    <td><input type="text" name="makhoa" Placeholder="Mã khoa"></td>
+                                </tr>
+                                <tr>
+                                    <td ><lable for "tenkhoa">Tên khoa    :</lable></td>
+                                    <td><input type="text" name="tenkhoa" Placeholder="Tên khoa"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <center><br/><input type="submit" value="Nhập tên khoa" style="background:  #997a00; color: white;width: 200px;"></center>
+                        <br/>
+                        <br/>
+                    </form>
+                    <br/>
+                    </div>
+                </div>
+                <br/>
+                    <div class="table-wrapper-scroll-y">
+            <table class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                                <th>Mã khoa</th>
+                                <th>Tên khoa</th>
+                                <th>Tên tiếng Anh</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+
+                                {% for item9  in khoa5 %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codediv}}</td>
+                                    <td align="left"> {{ item9.namediv}}</td>
+                                    <td > </td>
+
+
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+                        <br/s>
+
+
+                </div>
+                </div>
+                <br/>
+        </div>
+
+
+
+        </div>
+
+    <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "290px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{% static 'images/loginavatar.png' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="form-group">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" class="form-control" checked="checked" name="remember"> Remember me
+                      </label>
+
+            </div>
+
+            <div class="form-group">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </form>
+
+
+</div>
+
+
+
+
+
+    <script>
+            function Chapnhan() {
+              document.getElementById("tabhome").hide();
+
+            }
+    </script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script>
+            function scrollFunction() {
+          if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction1() {
+          window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+        }
+    </script>
+
+
+
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+
+</html>
+

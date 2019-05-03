@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
-     
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-            	
+
     <script>
         function dropdownMenu1565Set(val)
         {
@@ -19,57 +23,51 @@
              else{$('#menu1').val('');$('#menu1').html('Select Client');}
         }
     </script>
+    <script>
+        function myFunction()
+
+        { var i1={{phong_id}};
+          var i2={{benhnhan_id}}
+            window.open("http://doctorcityvn.pythonanywhere.com" + "/" + i1 + "/" + i2 + "/1/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=50,left=500,width=400,height=400");
+        }
+    </script>
+    <script>
+        function myFunction2()
+
+        { var i1={{phong_id}};
+          var i2={{benhnhan_id}}
+            window.open("http://doctorcityvn.pythonanywhere.com" + "/" + i1 + "/" + i2 + "/2/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=50,left=500,width=400,height=400");
+        }
+    </script>
+
     <title>Document</title>
     <style type="text/css">
-    .txtdeepshadow {
-  text-align: center;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 35px;
-  height: 80px;
-  padding-top: 10px;
-  color: #FFD700;
-  background-color: #87CEFA;
-  letter-spacing: .1em;
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
-}
- .txtdeepshadow1 {
-  text-align: center;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 13px;
-  height: 20px;
-  padding-top: 2px;
-  color: #FFD700;
-  background-color: #8795fa;
-  letter-spacing: .1em;
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828;
-}
-.txtelegantshadow {
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 15px;
-  height: 20px;
-  padding-top: 5px;
-  color: #131313;
-  background-color: #e7e5e4;
-  letter-spacing: .15em;
-  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897, -12px 24px 1px #9e9c9c, -13px 26px 1px #a3a1a1, -14px 28px 1px #a8a6a6, -15px 30px 1px #adabab, -16px 32px 1px #b2b1b0, -17px 34px 1px #b7b6b5, -18px 36px 1px #bcbbba, -5px 10px 1px #c1bfbf, -5px 10px 1px #c6c4c4, -5px 10px 1px #cbc9c8, -5px 10px 1px #cfcdcd, -5px 10px 1px #d4d2d1, -24px 48px 1px #d8d6d5, -5px 10px 1px #dbdad9, -5px 10px 1px #dfdddc, -7px 10px 1px #e2e0df, -5px 10px 1px #e4e3e2;
-}
-    </style>
+     </style>
 </head>
 <body>
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Doctorcity</a></h6>
+      <hr class="style2">
+      <a href="http://doctorcityvn.pythonanywhere.com"><img src="{% static 'images/doctor.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/about/"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <a href="#"><img src="{% static 'images/service.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Services</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/all/BN1/#"><img src="{% static 'images/benhnhan.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Clients</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/staff/"><img src="{% static 'images/datacenter.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Data center</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/onsite/"><img src="{% static 'images/doctorathome.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Doctor at Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/contact/"><img src="{% static 'images/contact.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Contact</a>
+    </div>
     <div class="container">
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
         <div  class="row">
             <div class="col-sm-2">
-                <center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="responsive-img" style="max-height:120px"></center>
+                <center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="responsive-img" style="max-height:100px"></center>
             </div>
             <div class="col-sm-8 col-sm-offset-1">
                     <center><h1  class="txtdeepshadow">Trung tâm hỗ trợ bác sỹ</h1></center>
-                    
-                </div>
+             </div>
         </div>
         <div  class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <br/>
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Phòng Khám
@@ -77,118 +75,702 @@
                     <ul class="dropdown-menu">
                         {% if namediv_list %}
                                 {% for name1 in namediv_list %}
-                                <li><a href="/{{name1.id}}">{{name1}} </a></li>
-                                
+                                <li><a href="/{{name1.id}}/">{{name1}} </a></li>
+
                                 {% endfor %}
-                            
+
                             {% else %}
                             <p>No Div are available.</p>
                          {% endif %}
-                    
-                
                             <li class="divider"></li>
-                            <li><a href="/all/">All Div</a></li>
+                            <li><a href="http://doctorcityvn.pythonanywhere.com">All Div</a></li>
                     </ul>
                 </div>
                 <br/>
-                <div>
-                    
-                        {% if person1 %}
-                            
-                            {% for name3 in person1 %}
-                            <a href="">{{name3.namepatient}}: </a>
-                            <ul>
+                <div class="searchbar">
+                    <form action="" method="post">
+                    {% csrf_token %}
+                        <input class="search_input" type="text" name="searchnamebn" placeholder="Search tên bệnh nhân" align="center">
+                        <input type="submit" value="Search"/>
+                    </form>
+                </div>
+                <br/>
 
-                                <li>Tuổi: {{name3.age}} </li>
-                                <li>Địa chỉ: {{name3.place}} </li>                                
+                <div>
+                <div class="table-wrapper-scroll-y">
+
+                   <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                        <!--    <th>Code</th> -->
+                            <th>Họ tên</th>
+                            <th>Tuổi, TP</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% if person1 %}
+
+
+                                {% for name2 in person1 %}
+                        <tr>
+                            <td>{{forloop.counter}} </td>
+                        <!--    <td>{{name2.codepatientp}} </td> -->
+                            <td><a href="http://doctorcityvn.pythonanywhere.com/all/{{name2.codepatientp}}">{{name2}} </a></td>
+                            <td>{{name2.age}} tuổi, {{name2.City}} </a></td>
+                        </tr>
+                                {% endfor %}
+
+                            {% endif %}
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+
+                 {% if person2 %}
+
+                            {% for name3 in person2 %}
+                            <h5 style="text-shadow: 2px 2px 1px #87cefa"><b>Thông tin bệnh nhân - {{name3.namepatient}}:</b></h5>
+                            <ul>                                <li>Tuổi: {{name3.age}} </li>
+                                <li>Địa chỉ: {{name3.place}} </li>
+                                <li>Phòng khám: {{name3.Type_id.namediv}} </li>
                             {% endfor %}
-                                        
+
                         {% else %}
                             <p>No patients are available.</p>
                         {% endif %}
+                        {% if tctq %}
+                                {% for tc1 in tctq %}
+                                    {% if forloop.last  %}
+                                        <li>Lần khám: {{tc1.lankham}} </li>
+                                        <li>Ngày khám: {{tc1.date}} </li>
+                                    {% endif %}
+
+                                {% endfor %}
+                            {% endif %}
                             </ul>
-                </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-               <button onclick="myFunction()">Lịch sử khám bệnh</button>
-               <script>
-                function myFunction() {
-                    
-
-                var path = window.location.pathname;
-                var page = path.split("/").pop();
-                console.log( page );
-
-
-                }
-                </script>
+               <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
             </div>
-            <div class="col-sm-4">
-                <br/>
-                <div>
-                    <ul>
-                        {% if person1 %}
-                            
-                            {% for name3 in person1 %}
-                                <div class="form-group purple-border">
-                                    <label style="text-shadow: 4px 4px 2px #87cefa" for="trieuchung">Triệu chứng</label>
-                                    <textarea class="form-control" id="trieuchung" rows="3"> {{name3.symptom}} </textarea>
-                                </div>
-                                <h5 style="color: green; font-weight: bold;background-color: lightblue;">Bác sỹ: {{name3.doctor}}  </h3>
-                                <div class="form-group green-border-focus">
-                                        <label for="kedon" style="text-shadow: 4px 4px 2px #87cefa">Kê dơn</label>
-                                        <textarea class="form-control" id="kedon" rows="3">{{name3.prescription}} </textarea>
-                                </div>
-                                
-                            {% endfor %}
-                                        
-                        {% else %}
-                            <p>No patients are available.</p>
-                        {% endif %}
-                      
-                    </ul>
-                </div>
-                
-                
-                
+            <div class="col-sm-6">
 
-               
-                
-            </div>
-            <div class="col-sm-4">
             <br/>
-                <h4 style="text-shadow: 4px 4px 2px #87cefa">Hỗ trợ của trung tâm: {{name3.doctor}}</h4>
-                
+
+                   <table border="1">
+                            <thead>
+                            <tr>
+                                <th class="col-sm-2"><a href="#">Prev Date</a>  </th>
+
+                                <th class="col-sm-2"><a>{{date_joined}}</a></th>
+
+
+
+                                <th class="col-sm-2"><a href="#">Next Date</a></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                    </table>
+                    {% for name3 in person2 %}
+                        <h5 style="text-shadow: 2px 2px 1px brown; color:yellow; background-color:slateblue; font-size:105%; margin-top: 1.5em; margin-bottom: 1.5em;" align="center"><b>Triệu chứng bệnh nhân: {{name3.namepatient}}<b/></h5>
+                        {% endfor %}
+
+
+                    <div class="col-sm-6">
+
+                        <script>
+                        function ftttq() {
+                            var k1="{{slug}}";
+                            window.open("http://doctorcityvn.pythonanywhere.com/BN/update/" + k1, width=200);
+                        }
+                        </script>
+
+                    <h5 style="text-shadow: 2px 2px 1px #87cefa"><button id="myBtn">Sửa</button><b>Triệu chứng tổng quát:</b></h5>
+                        <div id="myModal" class="modal">
+
+                          <!-- Modal content -->
+                          <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form action="" method="post">
+                            {% csrf_token %}
+
+                            <table class="table table-hover" >
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Triệu chứng</th>
+                                <th class="text-center">Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for item9 in tc %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codetrieuchung}}</td>
+                                    <td align="left"> {{ item9.trieuchung1}}</td>
+
+                                                {% for tc1 in tctq %}
+                                                    {% if item9.codetrieuchung == tc1.codetrieuchung_id %}
+
+                                                        <td align="center"><input type="text" class="form-control" id="usr" value={{tc1.status1}}></td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+
+                                <input type="submit" value="Update"/>
+                            </form>
+
+                          </div>
+                          <script>
+// Get the modal
+                            var modal = document.getElementById('myModal');
+
+                            // Get the button that opens the modal
+                            var btn = document.getElementById("myBtn");
+
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+
+
+                            // When the user clicks the button, open the modal
+                            btn.onclick = function() {
+                              modal.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function() {
+                              modal.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modal) {
+                                modal.style.display = "none";
+                              }
+                            }
+                            </script>
+
+
+                        </div>
+
+
+
+
+                        <div class="table-wrapper-scroll-y">
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                        <!--        <th>Code</th> -->
+                                <th>Triệu chứng</th>
+                                <th class="text-center">Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for tc1 in tctq %}
+                                    <tr>
+                            <!--            <td align="center">{{tc1.codetrieuchung_id}}</td>  -->
+
+                                                {% for item in tc %}
+                                                    {% if item.codetrieuchung == tc1.codetrieuchung_id %}
+
+                                                        <td align="left"> {{ item.trieuchung1}}</td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+                                        <td align="center">{{tc1.status1}}</td>
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                    <h5 style="text-shadow: 2px 2px 1px #87cefa"><button id="myBtn2">Thêm</button><b>Triệu chứng cục bộ:</b></h5>
+                    <div id="myModal2" class="modal">
+
+                          <!-- Modal content -->
+                          <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form action="" method="post">
+                            {% csrf_token %}
+                            <table class="table table-hover" >
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Triệu chứng</th>
+                                <th class="text-center">Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for item9 in tc %}
+                                    <tr>
+                            <!--            <td align="center">{{tc1.codetrieuchung_id}}</td>  -->
+                                    <td align="left"> {{ item9.codetrieuchung}}</td>
+                                    <td align="left"> {{ item9.trieuchung1}}</td>
+
+                                                {% for tc1 in tccb %}
+                                                    {% if item9.codetrieuchung == tc1.codetrieuchung_id %}
+
+
+                                                        <td align="center"><input type="text" class="form-control" id="usr" value="{{tc1.status1}}"></td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+                        <input type="submit" value="Update"/>
+                            </form>
+                          </div>
+                          <script>
+// Get the modal
+                            var modal2 = document.getElementById('myModal2');
+
+
+                            // Get the button that opens the modal
+                            var btn2 = document.getElementById("myBtn2");
+
+
+                            // Get the <span> element that closes the modal
+
+                            var span2 = document.getElementsByClassName("close")[1];
+
+                            // When the user clicks the button, open the modal
+                            btn2.onclick = function() {
+                              modal2.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+
+                            span2.onclick = function() {
+                              modal2.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modal2) {
+                                modal2.style.display = "none";
+                              }
+                            }
+                            </script>
+
+
+                        </div>
+                        <div class="table-wrapper-scroll-y">
+
+                        <table class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                        <!--        <th>Code</th> -->
+                                <th>Triệu chứng</th>
+                                <th class="text-center">Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            {% for tc2 in tccb %}
+                                    <tr>
+                          <!--              <td align="center">{{tc2.codetrieuchung_id}}</td> -->
+
+                                                {% for itemcb in tc %}
+                                                    {% if itemcb.codetrieuchung == tc2.codetrieuchung_id %}
+                                                        <td align="left"> {{ itemcb.trieuchung1}}</td>
+                                                    {% endif %}
+                                                {% endfor %}
+                                        <td align="center">{{tc2.status1}}</td>
+
+                                    </tr>
+                                {% endfor %}
+                        </table>
+
+                    </div>
+                    </div>
+            </div>
+            <div class="col-sm-3">
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                <h5 style="text-shadow: 2px 2px 1px #87cefa">Kết quả khám:</h5>
+
                 <div class="form-group green-border-focus">
-                    <textarea class="form-control" id="hotro" rows="3">{{name3.prescription}} </textarea>
+                     {% if Kluan1 %}
+                        {% for kl1 in Kluan1 %}
+
+                           <textarea class="form-control" id="hotro" rows="3">{{kl1.name_ketluan}} </textarea>
+                            <h6 color="Yellow" style="text-shadow: 2px 2px 1px #87cefa"><b>Bác sỹ:{{kl1.bacsy}} </b></h6>
+                        {% endfor %}
+                    {% endif %}
+
+
                 </div>
-                <input class="btn btn-primary" type="submit" value="Submit">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="xetnghiemmau">
-                    <label class="form-check-label" for="xetnghiemmau">
-                        Xét nghiệm máu
-                    </label>
-                     <input class="form-check-input" type="checkbox" value="" id="nuoctieu">
-                    <label class="form-check-label" for="nuoctieu">
-                        Xét nghiệm nước tiểu
-                    </label>
-                     <input class="form-check-input" type="checkbox" value="" id="noisoi">
-                    <label class="form-check-label" for="noisoi">
-                        Nội soi
-                    </label>
-                    <input class="form-check-input" type="checkbox" value="" id="xquang">
-                    <label class="form-check-label" for="noisoi">
-                        Chụp Xquang
-                    </label>
-                    
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                <h5 style="text-shadow: 2px 2px 2px #87cefa" margin-top: 0px; margin-bottom: 25px;><button Id="myBtnkc">Thêm</button><b>Xử lý khẩn cấp:</b></h5>
+
+                <div id="myModalkc" class="modal">
+
+                     <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                            <form action="" method="post">
+                            {% csrf_token %}
+
+                                <table class="table table-hover table-dark"  margin-top: .2em;>
+                                    <thead>
+                                        <tr>
+                                                <th  class="text-left">Mô tả</th>
+                                                <th  class="text-left">Trạng thái</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+
+                                             {% if Xlkc1 %}
+                                                    {% for dt2 in Xlkc1 %}
+                                                        <tr>
+                                                            <td align="left">{{dt2.name_xlkc}}</td>
+
+                                                            <td align="left"><input type="text" class="form-control" id="kc" value="{{dt2.status}}"></td>
+
+                                                        </tr>
+                                                    {% endfor %}
+                                                {% endif %}
+                                    </tbody>
+                                </table>
+                                    <input type="submit" value="Update"/>
+                            </form>
+
+                    </div>
+                    <script>
+// Get the modal
+                            var modalkc = document.getElementById('myModalkc');
+
+                            // Get the button that opens the modal
+                            var btnkc = document.getElementById("myBtnkc");
+
+                            // Get the <span> element that closes the modal
+                            var spankc = document.getElementsByClassName("close")[2];
+
+
+                            // When the user clicks the button, open the modal
+                            btnkc.onclick = function() {
+                              modalkc.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            spankc.onclick = function() {
+                              modalkc.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modalkc) {
+                                modalkc.style.display = "none";
+                              }
+                            }
+                    </script>
                 </div>
-                          
-      
+                <table class="table table-hover table-dark"  margin: 50px auto;>
+                    <thead>
+                    <tr>
+                        <th  class="text-left">Mô tả</th>
+                        <th  class="text-left">Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    {% if Xlkc1 %}
+                        {% for dt2 in Xlkc1 %}
+                            <tr>
+                                <td align="left">{{dt2.name_xlkc}}</td>
+                                <td align="left">{{dt2.status}}</td>
+
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </table>
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                <h5 style="text-shadow: 2px 2px 1px #87cefa"><button id="myBtndv">Thêm</button><b>   Dịch vụ:</b></h5>
+                <div id="myModaldv" class="modal">
+
+                          <!-- Modal content -->
+                          <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form action="" method="post">
+                            {% csrf_token %}
+
+                            <table class="table table-hover table-dark"  margin-top: .2em;>
+                    <thead>
+                    <tr>
+                        <th  class="text-left">Code</th>
+                        <th  class="text-left">Tên dịch vụ</th>
+                        <th  class="text-left">Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                         {% for item1 in sv %}
+                                    <tr>
+                                <td>{{item1.codeservice}}</td>
+                                <td>{{item1.name_serv}}</td>
+
+                                                {% for sv1 in service1 %}
+                                                    {% if item1.codeservice == sv1.codeservice_id %}
+
+
+                                                    <td align="center"><input type="text" class="form-control" id="usr3" value="{{sv1.status}}"></td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+
+
+                                    </tr>
+                        {% endfor %}
+
+                </table>
+
+
+                                <input type="submit" value="Update"/>
+                            </form>
+
+                          </div>
+                          <script>
+// Get the modal
+                            var modaldv = document.getElementById('myModaldv');
+
+                            // Get the button that opens the modal
+                            var btndv = document.getElementById("myBtndv");
+
+                            // Get the <span> element that closes the modal
+                            var spandv = document.getElementsByClassName("close")[3];
+
+
+                            // When the user clicks the button, open the modal
+                            btndv.onclick = function() {
+                              modaldv.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            spandv.onclick = function() {
+                              modaldv.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modaldv) {
+                                modaldv.style.display = "none";
+                              }
+                            }
+                            </script>
+
+
+                        </div>
+                <table class="table table-hover table-dark"  margin-top: .2em;>
+                    <thead>
+                    <tr>
+                <!--        <th  class="text-center">Code</th>  -->
+                        <th  class="text-left">Tên dịch vụ</th>
+                        <th  class="text-left">Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                        {% for sv1 in service1 %}
+                                    <tr>
+                        <!--                <td>{{sv1.codeservice_id}}</td> -->
+
+                                                {% for item1 in sv %}
+                                                    {% if item1.codeservice == sv1.codeservice_id %}
+
+                                                        <td align="left"> {{ item1.name_serv}}</td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+                                        <td align="left">{{sv1.status}}</td>
+
+                                    </tr>
+                                {% endfor %}
+
+                </table>
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+
+                <h5 style="text-shadow: 2px 2px 1px #87cefa"><button Id="myBtndt">Thêm</button><b>    Đơn thuốc:</b></h5>
+
+                <div id="myModaldt" class="modal">
+
+                     <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                            <form action="" method="post">
+                            {% csrf_token %}
+
+                                <table class="table table-hover table-dark"  margin-top: .2em;>
+                                    <thead>
+                                        <tr>
+                                                <th>Code</th>
+                                                <th  class="text-left">Tên thuốc</th>
+                                                <th  class="text-left">Liều dùng</th>
+                                                <th  class="text-left">Số lượng</th>
+                                                <th  class="text-left">Đơn vị tính</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+
+                                             {% for dt1 in donthuoc1 %}
+                                                <tr>
+                                                          <td>{{dt1.codedonthuoc_id}}</td>
+
+                                                            {% for item3 in dt %}
+                                                                {% if item3.codemedicine == dt1.codedonthuoc_id %}
+                                                                    <td> {{ item3.name_medi}}</td>
+                                                                    <td align="left">{{item3.dosage}}</td>
+                                                                {% endif %}
+                                                            {% endfor %}
+
+                                                    <td align="center"><input type="text" class="form-control" id="usr3" value="{{dt1.soluong}}"></td>
+                                                    <td align="center"><input type="text" class="form-control" id="usr3" value="{{dt1.dvtinh}}"></td>
+                                                </tr>
+                                            {% endfor %}
+                                    </tbody>
+                                </table>
+                                    <input type="submit" value="Update"/>
+                            </form>
+
+                    </div>
+                    <script>
+// Get the modal
+                            var modaldt = document.getElementById('myModaldt');
+
+                            // Get the button that opens the modal
+                            var btndt = document.getElementById("myBtndt");
+
+                            // Get the <span> element that closes the modal
+                            var spandt = document.getElementsByClassName("close")[4];
+
+
+                            // When the user clicks the button, open the modal
+                            btndt.onclick = function() {
+                              modaldt.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            spandt.onclick = function() {
+                              modaldt.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modaldt) {
+                                modaldt.style.display = "none";
+                              }
+                            }
+                    </script>
+                </div>
+
+                <table class="table table-hover table-dark" margin-top: 0px;>
+                    <thead>
+                    <tr>
+                   <!--     <th>Code</th> -->
+                        <th  class="text-left">Tên thuốc</th>
+                        <th  class="text-left">Liều dùng</th>
+                        <th  class="text-left">Số lượng</th>
+                        <th  class="text-left">Đơn vị tính</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    {% for dt1 in donthuoc1 %}
+                                    <tr>
+                        <!--                <td>{{dt1.codedonthuoc_id}}</td>  -->
+
+                                                {% for item3 in dt %}
+                                                    {% if item3.codemedicine == dt1.codedonthuoc_id %}
+
+                                                        <td> {{ item3.name_medi}}</td>
+                                                        <td align="left"> {{ item3.dosage}}</td>
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+
+
+                                        <td align="left">{{dt1.soluong}}</td>
+                                        <td align="left" >{{dt1.dvtinh}}</td>
+
+                                    </tr>
+                    {% endfor %}
+                </table>
+                <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                <h5 style="text-shadow: 2px 2px 1px #87cefa"><b>Tin nhắn:</b></h5>
+
+                <div class="form-group green-border-focus">
+                    <textarea class="form-control" id="hotro" rows="3">Chat here</textarea>
+                </div>
+
+
             </div>
         </div>
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
     </div>
-    
+
 </body>
 </html>

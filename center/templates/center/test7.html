@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="{% static 'css/onsite.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+       $(document).ready(function() {
+             // executes when HTML-Document is loaded and DOM is ready
+             $("ul").hide();
+             $("#pan2").hide();
+            $("#pan3").hide();
+            $("#pan10").hide();
+            $("#panbenhsu").hide();
+            $("#panthongtin").hide();
+            $("#pantrieuchung").hide();
+            $("#panxuly").hide();
+            $("#pandichvu").hide();
+            $("#pandonthuoc").hide();
+            $("#panchat").hide();
+            $("#pantiepnhan1").hide();
+            $("#mothongtin").hide();
+            $("#mobenhsu").hide();
+            $("#moxuly").hide();
+            $("#modichvu").hide();
+            $("#mochat").hide();
+            $("#motrieuchung").hide();
+            $("#modonthuoc").hide();
+            $("#duongke").hide();
+            $("#myBtn").hide();
+
+
+
+        });
+
+        $(document).ready(function(){
+
+
+
+          $("#tiepnhan").click(function(){
+
+            $("#pantiepnhan1").show();
+            $("#pan1").hide();
+            $("#myBtn").show();
+
+
+          });
+
+
+        $("#myBtn").click(function(){
+            $("ul").hide();
+             $("#pan2").hide();
+            $("#pan3").hide();
+            $("#pan10").hide();
+            $("#panbenhsu").hide();
+            $("#panthongtin").hide();
+            $("#pantrieuchung").hide();
+            $("#panxuly").hide();
+            $("#pandichvu").hide();
+            $("#pandonthuoc").hide();
+            $("#panchat").hide();
+            $("#pantiepnhan1").hide();
+            $("#mothongtin").hide();
+            $("#mobenhsu").hide();
+            $("#moxuly").hide();
+            $("#modichvu").hide();
+            $("#mochat").hide();
+            $("#motrieuchung").hide();
+            $("#modonthuoc").hide();
+            $("#duongke").hide();
+            $("#myBtn").hide();
+            $("#pan1").show();
+
+          });
+          $("#hoanthienhoso").click(function(){
+            $("ul").hide();
+            $("#pan2").show();
+            $("#pan1").hide();
+            $("#myBtn").show();
+
+          });
+          $("#mohosokham").click(function(){
+            $("ul").hide();
+            $("#pan3").show();
+            $("#pan31").show();
+            $("#pan2").hide();
+            $("#pan1").hide();
+            $("#mothongtin").show();
+            $("#mobenhsu").show();
+            $("#moxuly").show();
+            $("#modichvu").show();
+            $("#mochat").show();
+            $("#motrieuchung").show();
+            $("#modonthuoc").show();
+            $("#panthongtin").show();
+            $("#duongke").show();$("#myBtn").show();
+
+
+
+          });
+          $("#chapnhantiepnhanbenhnhan").click(function(){
+            $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("ul").hide();
+            $("#pan3").show();
+            $("#pan31").show();
+            $("#pan2").hide();
+            $("#pan1").hide();
+            $("#mothongtin").show();
+            $("#mobenhsu").show();
+            $("#moxuly").show();
+            $("#modichvu").show();
+            $("#mochat").show();
+            $("#motrieuchung").show();
+            $("#modonthuoc").show();
+            $("#panthongtin").show();
+            $("#chapnhantiepnhanbenhnhan").hide();
+            $("#pantiepnhan1").hide();
+            $("#duongke").show();$("#myBtn").show();
+
+
+
+          });
+
+          $("#mothongtin").click(function(){
+            $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panthongtin").show();
+
+          });
+
+          $("#mobenhsu").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panbenhsu").show();
+
+          });
+          $("#motrieuchung").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pantrieuchung").show();
+
+          });
+          $("#moxuly").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panxuly").show();
+
+          });
+          $("#modichvu").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pandichvu").show();
+
+          });
+          $("#modonthuoc").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pandonthuoc").show();
+
+          });
+          $("#mochat").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panchat").show();
+
+          });
+
+
+          $("#luuthongtin").click(function(){
+
+
+            $("#pan1").show();
+            $("#pan2").hide();
+
+          });
+        });
+    </script>
+
+
+
+     <script>
+        function Map1()
+        {
+            var myCenter=15,105;
+            var marker=new google.maps.Marker({
+            position:myCenter,
+            icon:'pinkball.png'
+            });
+
+            marker.setMap(map);
+        }
+    </script>
+      <script src="http://maps.googleapis.com/maps/api/js?key=#{AIzaSyD5wAflNNOYGLM4FiA9HWXZvYcPiyGi2sw}&sensor=false">
+        </script>
+        <script>
+          //Khoi tao Map
+
+
+            function initialize()
+            {
+            var myCenter=new google.maps.LatLng(21,106);
+            var mapProp = {
+              center:myCenter,
+              zoom:5,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+              };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            var marker=new google.maps.Marker({
+              position: myCenter,
+              //icon: "pinkball.png",
+              //title: "Landmark 72 ^_^",
+              //draggable: true,
+              //animation:google.maps.Animation.BOUNCE,
+              });
+
+            marker.setMap(map);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Doctorcity</a></h6>
+      <hr class="style2">
+      <a href="http://doctorcityvn.pythonanywhere.com/test/"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/about/"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <a href="#"><img src="{% static 'images/service.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Services</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/all/BN1/#"><img src="{% static 'images/benhnhan.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Lịch sử khám bệnh</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/staff/"><img src="{% static 'images/datacenter.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thanh toán</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/onsite/"><img src="{% static 'images/doctorathome.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thông báo từ trung tâm</a>
+
+      <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg" onclick="document.getElementById('id01').style.display='block'">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a>
+     <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+                                <button id="mothongtin" class="w3-button w3-black"><img src="{% static 'images/thongtin.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Tin</button>
+
+                                <button id="mobenhsu" class="w3-button w3-black"><img src="{% static 'images/benhsu.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">B.Sử</button>
+
+
+                                <button id="motrieuchung" class="w3-button w3-black"><img src="{% static 'images/trieuchung.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Chứng</button>
+
+
+                                <button id="moxuly" class="w3-button w3-black"><img src="{% static 'images/xuly.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">X.lý</button>
+
+                                <button id="modichvu" class="w3-button w3-black"><img src="{% static 'images/dichvu.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">D.Vụ</button>
+                                <button id="modonthuoc" class="w3-button w3-black"><img src="{% static 'images/donthuoc.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Đ.Thuốc</button>
+                                <button id="mochat" class="w3-button w3-black"><img src="{% static 'images/chat.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Chat</button>
+
+
+
+
+
+
+
+        <div  class="row">
+
+            <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+
+
+            <div class="panel panel-default" id="pantiepnhan1">
+
+                <div class="panel-body" >
+
+
+                    <form action="/staff/" method="get">
+
+                        <table class="table" id="table1">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "typeid">Phòng ID:</lable></td>
+                                            <td>
+                                                <select name="phongidstaff">
+                                                {% for entry in namediv_list %}
+                                                 <option value="{{ entry.id }}">{{ entry.namediv }}</option>
+                                                {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><lable for "hotenstaff">Họ tên:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="hotenstaff" value="Nguyễn Thị Hằng"></td>
+                                        </tr>
+
+                                            <td><lable for "tuoistaff">Tuổi:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="tuoistaff" value="43"></td>
+
+                                        <tr>
+                                            <td><lable for "diachistaff">Địa chỉ:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="diachistaff" value="41 Thanh Xuân Bắc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "thanhphostaff">T.phố:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="thanhphostaff" value="Hà Nội"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Tên dịch vụ:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="tendichvu" value="cấp cứu khẩn cấp"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "chatluong">Chất lượng:</lable></td>
+                                            <td><input  class="form-control form-control-sm" type="text" name="chatluong" value="hạng 5"></td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+
+
+
+                    </form>
+                    <div class="col-xs-7">
+                    <input type="button"  onclick="myFunction()" class="btn btn-info" value="Từ chối" id="tuchoi">
+                    </div>
+                    <div class="col-xs-5">
+                    <button class="btn btn-info" id="chapnhantiepnhanbenhnhan" >Chấp nhận</button>
+                    </div>
+                    </br>
+
+
+                <script>
+
+                    function myFunction() {
+                      window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+                    }
+
+
+
+                </script>
+
+                </div>
+
+            </div>
+            <div class="panel panel-default" id="pan1" >
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4">
+
+                      <div class="""slidecontainer">
+                      <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+
+                    </div>
+
+                </div>
+                <div class="panel-body" style="max-height: 750px;">
+
+                    <button type="button" class="btn btn-info" id="tiepnhan">Tiếp nhận</button>
+                    <div id="googleMap" class="z-depth-1-half map-container" style="height: 200px; margin-top: 25px;"></div>
+                    <button type="button" class="btn btn-info" id="mohosokham" style="margin-top: 25px;">Mở hồ sơ khám</button>
+                    <button type="button" class="btn btn-info" id="hoanthienhoso" style="margin-top: 25px;">Hoàn thiện hồ sơ khám</button>
+                </div>
+            </div>
+            <div class="panel panel-default" id="pan2">
+
+                <div class="panel-body">
+                    <button h1 type="button" class="btn">Bệnh sử (Diễn biến bệnh hiện tại)</button>
+                    <textarea class="form-control" rows="3" id="benhsu"></textarea>
+                    <button type="button" class="btn" style="margin-top: 25px;">Khám bệnh</button>
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Dấu hiệu sinh tồn">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Triệu chứng toàn thần ">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Triệu chứng tuần hoàn">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Hô hấp">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tiêu hóa">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tiết niệu sinh dục">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Tâm thần kinh">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Cơ xương khớp">
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Cơ quan khác">
+                    <button type="button" class="btn">Kết quả kệnh lâm sàng</button>
+                    <textarea class="form-control" rows="3" id="ketquacanlamsang" placeholder="Enter text"></textarea>
+                    <button type="button" class="btn">Chẩn đoán</button>
+                    <textarea class="form-control" rows="3" id="chandoan" placeholder="Enter text"></textarea>
+                    <button type="button" class="btn">Xử lý</button>
+                    <input type="text" class="form-control" id="dauhieusinhton" placeholder="Item text">
+                    <button type="button" class="btn" id="luuthongtin">Lưu thông tin</button>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-default" id="panbenhsu" >
+
+                        <div class="panel-body" style="max-height: 750px;">
+                            <div class="col col-xs-4">
+                            <button id="moback" class="w3-button w3-black"><img src="{% static 'images/left.png' %}" style="max-height:28px">Back</button>
+                            </div>
+                            <div class="col col-xs-4">
+                            <button id="moforward" class="w3-button w3-black"><img src="{% static 'images/pause.png' %}" style="max-height:28px">Home</button>
+                            </div>
+                            <div class="col">
+
+                            <button id="mohome" class="w3-button w3-black"><img src="{% static 'images/right.png' %}" style="max-height:28px;max-width:28px">Forward</button>
+                            </div>
+                            <br/>
+                            <textarea class="form-control" rows="3" id="thongtinbenhsu" placeholder="Bệnh sử (diễn biến bệnh đã mắc) "></textarea>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                        </div>
+
+                        <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+                </div>
+            <div class="panel panel-default" id="panthongtin" >
+                <div class="panel-body" style="max-height: 750px;">
+
+                                <input type="text" class="form-control" id="thongtinhanhchinh" placeholder="Thông tin hành chính">
+                                <input type="text" class="form-control" id="thongtinbaohiem" placeholder="Thông tin bảo hiểm ">
+                                <textarea class="form-control" rows="3" id="thongtinbenhdamac" placeholder="Tiền sử bệnh đã mắc "></textarea>
+                                <textarea class="form-control" rows="3" id="thongtinbenhsu" placeholder="Bệnh sử (diễn biến bệnh đã mắc) "></textarea>
+
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                <button class="w3-button w3-black" onclick="topFunction()" id="myBtn" title="Go to home">Back home</button>
+            </div>
+            <div class="panel panel-default" id="pantrieuchung" >
+                        <div class="panel-body" style="max-height: 750px;">
+                            <div class="col col-xs-4">
+                            <button id="moback" class="w3-button w3-black"><img src="{% static 'images/left.png' %}" style="max-height:28px">Back</button>
+                            </div>
+                            <div class="col col-xs-4">
+                            <button id="moforward" class="w3-button w3-black"><img src="{% static 'images/pause.png' %}" style="max-height:28px">Home</button>
+                            </div>
+                            <div class="col">
+
+                            <button id="mohome" class="w3-button w3-black"><img src="{% static 'images/right.png' %}" style="max-height:28px;max-width:28px">Forward</button>
+                            </div>
+                            <br/>
+                                    <table class="table table-bordered table-striped" >
+
+
+                                            <thead>
+                                                <tr>
+
+                                                    <th th colspan="5"><b> Triệu chứng Bệnh nhân</b></lable></th>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <th style="display:none">Code</th>
+                                                    <th style="width: 70%">Triệu chứng</th>
+                                                    <th >Trạng thái</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for tc1 in tc %}
+
+
+                                                <tr>
+
+                                                    <td style="display:none"><input type="text" class="form-control" name="codetc{{forloop.counter}}" value={{tc1.codetrieuchung}}></td>
+                                                    <td style="width: 70%"><input type="text" class="form-control" name="tcbn{{forloop.counter}}" value="{{tc1.trieuchung1}}" maxlength="2" ></td>
+                                                    <td>
+                                                    <div class="form-group">
+                                                    <select class="form-control" name="trangthai{{forloop.counter}}">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                    <option>13</option>
+
+                                                  </select>
+                                                    </div>
+                                                    </td>
+
+                                                </tr>
+                                                {% endfor %}
+
+
+
+                                            </tbody>
+                                        </table>
+                        </div>
+                        <br/>
+                        <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+                </div>
+            <div class="panel panel-default" id="pandichvu" >
+                        <div class="panel-body" style="max-height: 750px;">
+
+                <form action="" method="post">
+                            {% csrf_token %}
+
+                                <table class="table table-hover table-dark"  id="bangdichvu">
+                                    <thead>
+                                        <tr>
+                                                <th  class="text-left">Mô tả dịch vụ</th>
+                                                <th  class="text-left">Trạng thái</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Dịch vụ A"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="đồng ý"></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Dịch vụ B"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="chờ bệnh nhận đồng ý"></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Dịch vụ C"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="Đã có kết quả"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Dịch vụ D"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="Chờ đơn vị tiếp nhận"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Dịch vụ D"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="Chờ kết quả"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" placeholder="thêm dịch vụ"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" placeholder="trạng thái"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" placeholder="thêm dịch vụ"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" placeholder="trạng thái"></td>
+
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <br/>
+                                    <input type="submit" value="Update"/>
+                            </form>
+
+
+                </div>
+                <br/>
+               <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+            </div>
+            <div class="panel panel-default" id="panchat" >
+                        <div class="panel-body" style="max-height: 750px;">
+
+                <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="Chat here"></td>
+                <br/>
+                <textarea class="form-control" rows="10" id="chat"></textarea>
+
+                </div>
+                <button class="w3-button w3-black" onclick="topFunction()" id="myBtn" title="Go to home">Back home</button>
+            </div>
+            <div class="panel panel-default" id="pandonthuoc" >
+                <div class="panel-body" style="max-height: 750px;">
+
+                <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="table-wrapper-scroll-y">
+                                <table class="table table-hover table-dark"  margin-top: .2em;>
+                                    <thead>
+
+                                        <th  class="text-left">Tên thuốc/Liều dùng/Số lượng/Đơn vị tính</th>
+
+                                    </thead>
+                                    <tbody>
+
+
+                                            <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="paracetamol"></td>
+
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="ngày uống 2 viên khi sốt trên 38 độ"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="2/vỉ"></td>
+                                            </tr>
+
+
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="Gatamicine"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="tiêm bắp 2 lần/ngày"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="10/ống"></td>
+
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="tên thuốc"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="liều dùng ngày 2 lần"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="1/vỉ"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="tên thuốc"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="liều dùng ngày 2 lần"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="1/vỉ"></td>
+
+
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="tên thuốc"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="liều dùng ngày 2 lần"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="1/vỉ"></td>
+
+
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="xl1" Placeholder="tên thuốc"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="liều dùng ngày 2 lần"></td>
+                                            </tr>
+                                            <tr>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" Placeholder="1/vỉ"></td>
+
+
+                                            </tr>
+
+
+                                    </tbody>
+                                </table>
+                                </div>
+                                <br/>
+                                    <input type="submit" value="Update"/>
+                            </form>
+                </div>
+                <br/>
+                <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+            </div>
+            <div class="panel panel-default" id="panxuly" >
+                        <div class="panel-body" style="max-height: 750px;">
+
+                <form action="" method="post">
+                            {% csrf_token %}
+
+                                <table class="table table-hover table-dark"  id="bangxuly">
+                                    <thead>
+                                        <tr>
+                                                <th  class="text-left">Mô tả</th>
+                                                <th  class="text-left">Trạng thái</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Băng cầm máu"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="thực hiện"></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="Cố định cột sống"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="yêu cầu"></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="adrenalin tiêm tĩnh mạch bắp 1/lần"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="yêu cầu"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" value="adrenalin tiêm tĩnh mạch bắp 1/lần"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" value="yêu cầu"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" placeholder="thêm xử lý"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" placeholder="trạng thái"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" placeholder="thêm xử lý"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" placeholder="trạng thái"></td>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left"><input type="text" class="form-control" id="xl1" placeholder="thêm xử lý"></td>
+                                            <td align="left"><input type="text" class="form-control" id="tt1" placeholder="trạng thái"></td>
+
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                    <input type="submit" value="Update"/>
+                            </form>
+
+                </div>
+                <br/>
+                <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+            </div>
+
+        </div>
+
+    <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "290px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{% static 'images/loginavatar.png' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="form-group">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" class="form-control" checked="checked" name="remember"> Remember me
+                      </label>
+
+            </div>
+
+            <div class="form-group">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </form>
+      // index 1
+
+
+</div>
+
+    <script>
+            function Chapnhan() {
+              document.getElementById("tabhome").hide();
+
+            }
+
+
+    </script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script>
+            function scrollFunction() {
+          if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction1() {
+          window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+        }
+</script>
+</body>
+
+</html>
+

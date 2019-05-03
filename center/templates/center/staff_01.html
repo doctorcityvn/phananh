@@ -1,0 +1,370 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+     <style type="text/css">
+
+    .txtdeepshadow {
+  text-align: center;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 25px;
+  height: 50px;
+  padding-top: 8px;
+  color: #FFD700;
+  background-color: #87CEFA;
+  letter-spacing: .1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 7px 0 #181818, 0 7px 0 #161616, 0 7px 0 #141414, 0 7px 0 #121212, 0 8px 15px rgba(0, 0, 0, 0.9);
+}
+    body {
+    background-image: linear-gradient(to bottom, rgb(204, 204, 255),   	white,#00ace6);
+    }
+    </style>
+    <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+    $('#tabs').click('tabsselect', function (event, ui) {
+          alert($("#tabs").tabs('option', 'active'));
+    });
+  });
+  </script>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+      <h6> <a href="javascript:void(0)" class="closebtn" style="font-size: 20px;" onclick="closeNav()" font>&times; Doctorcity</a></h6>
+      <br/>
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/menu/" style="font-size: 15px; text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="https://doctorcityvn.pythonanywhere.com/about/" style="font-size: 15px; text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg" style="font-size: 15px;text-align:left;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+    </div>
+
+<div class="container">
+    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+    <div  class="row" style="margin-top: 15px;">
+        <div class="col-sm-2">
+                <center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="responsive-img" style="max-height:90px"></center>
+        </div>
+        <div class="col-sm-8 col-sm-offset-1">
+                    <center><h1  class="txtdeepshadow">Nhập số liệu - Database</h1></center>
+
+        </div>
+    </div>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist" style="color:black;font-weight: bold;" id="tabs">
+    <li class="nav-item" >
+      <a class="nav-link active" data-toggle="tab" href="#home">Tr.chứng</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Thuốc</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">D.vụ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " data-toggle="tab" href="#menu3">b.Nhân</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+      <div class="tab-pane container active" id="home"><br>
+
+        <form action="/staff/" method="get">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-4">
+                                <br/>
+                                <br/>
+                                    <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3"><b>Triệu chứng</b></th>
+                                                </tr>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><lable for "matrieuchung">Mã t.chứng</lable></td>
+                                                    <td><input type="text" name="matrieuchung" Placeholder="Mã triệu chứng"></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td><lable for "tentrieuchung">Tên t.chứng</lable></td>
+                                                    <td><input type="text" name="tentrieuchung" Placeholder="Tên triệu chứng"></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td><lable for "Symptom">Tên tiếng Anh</lable></td>
+                                                    <td><input type="text" name="nhomcoquan" Placeholder="Symptom" autocomplete="off"></td>
+
+
+                                                </tr>
+                                            </tbody>
+                                    </table>
+
+                                <center><br/><input type="submit" value="Nhập tên triệu chứng" style="background:  #997a00; color: white;width: 200px;"></center>
+
+                                <br/>
+                        </div>
+        </form>
+        <div class="table-wrapper-scroll-y">
+            <table class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Tên t.chứng</th>
+                                <th>Tên tiếng Anh</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                                {% for item9 in tc %}
+                                    <tr>
+
+                                    <td align="left"> {{ item9.codetrieuchung}}</td>
+                                    <td align="left"> {{ item9.trieuchung1}}</td>
+                                    <td align="left"> {{ item9.nhomcoquan}}</td>
+
+
+
+
+
+
+                                    </tr>
+                                {% endfor %}
+
+
+
+
+
+
+
+                        </table>
+
+        </div>
+    </div>
+  <div id="menu1" class="container tab-pane fade"><br>
+      <form action="/staff/" method="get">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-4">
+                            <br/>
+                            <br/>
+                            <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3"><b>Đơn thuốc</b></th>
+                                            </tr>
+
+
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><lable for "codedonthuoc">Code    :</lable></td>
+                                                <td><input type="text" name="codedonthuoc" Placeholder="KSP"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><lable for "tenthuoc">Tên thuốc    :</lable></td>
+                                                <td><input type="text" name="tenthuoc" value="Paracetamol"></td>
+                                            </tr>
+
+                                            <tr>
+
+                                                  <label for="lieudung">Liều dùng    :</label>
+                                                  <textarea class="form-control" rows="5" name="lieudung">2 viên ngày</textarea>
+
+
+                                            </tr>
+                                            <tr>
+
+                                                  <label for="congdung_staff">Công dụng    :</label>
+                                                  <textarea class="form-control" rows="5" name="congdung_staff">giảm sốt, giảm đau</textarea>
+
+
+                                            </tr>
+                                            <tr>
+
+                                                  <label for="tacdungphu">Tác dụng phụ    :</label>
+                                                  <textarea class="form-control" rows="5" name="tacdungphu"> buồn ngủ </textarea>
+
+
+                                            </tr>
+
+                                        </tbody>
+                                </table>
+
+                            <center><input type="submit" value="Nhập thuốc" style="background:  #997a00; color: white; width: 200px;"></center>
+                        </div>
+                    </form>
+    <br/></div>
+
+    <div id="menu2" class="container tab-pane fade"><br>
+        <form action="/staff/" method="get">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4"><br/><br/>
+                <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3"><b>Dịch vụ</b></th>
+                                                </tr>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><lable for "madichvu">Mã dịch vụ    :</lable></td>
+                                                    <td><input type="text" name="madichvu" Placeholder="Mã dịch vụ"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><lable for "tendichvu">Tên dịch vụ    :</lable></td>
+                                                    <td><input type="text" name="tendichvu" Placeholder="Tên dịch vụ"></td>
+                                                </tr>
+                                            </tbody>
+            </table>
+
+
+            <center><br/><input type="submit" value="Nhập dịch vụ" style="background:  #997a00; color: white;width: 200px;"></center>
+
+            </div>
+        </form>
+
+    <br/></div>
+  <div class="tab-pane container fade" id="menu3"><br>
+        <form action="/staff/" method="get">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-4">
+                            <br/>
+                            <br/>
+                            <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th th colspan="2"><b>Thông tin bệnh nhân</b></th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><lable for "typeid">Phòng ID:</lable></td>
+                                            <td>
+                                                <select name="phongidstaff">
+                                                {% for entry in namediv_list %}
+                                                 <option value="{{ entry.id }}">{{ entry.namediv }}</option>
+                                                {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "code">Code    :</lable></td>
+                                            <td><input type="text" name="codestaff" value="BN{{bncount}}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "hotenstaff">Họ tên    :</lable></td>
+                                            <td><input type="text" name="hotenstaff" value="Nguyễn Thị Hằng"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tuoistaff">Tuổi    :</lable></td>
+                                            <td><input type="text" name="tuoistaff" value="43"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "diachistaff">Địa chỉ    :</lable></td>
+                                            <td><input type="text" name="diachistaff" value="41 Thanh Xuân Bắc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "thanhphostaff">Thành phố :</lable></td>
+                                            <td><input type="text" name="thanhphostaff" value="Hà Nội"></td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        <center><br/><input type="submit" value="Nhập dữ liệu bệnh nhân" style="background:  #997a00; color: white;width: 200px;"></center>
+                        </div>
+
+                    </form>
+
+    <br/><br/></div>
+
+
+
+
+
+
+    <br/></div>
+  </div>
+</div>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+      $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+      });
+    });
+    </script>
+
+</body>
+
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+
+</html>

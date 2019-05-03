@@ -1,0 +1,301 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <link href="{% static 'css/style5.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+    <script src="{% static 'js/test.js' %}"></script>
+    <script src="{% static 'js/countrypicker.js' %}"></script>
+    <script src="{% static 'js/countrypicker.min.js' %}"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/i18n/defaults-*.min.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <title>Document</title>
+    <style>
+
+    .table-wrapper-scroll-y {
+        display: block;
+        max-height: 300px;
+        overflow-y: auto;
+        font-weight: normal;
+    }
+
+div {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+table {
+  width: 100%;
+}
+
+th {
+  height: 10px;
+}
+
+</style>
+<style>
+.co_1 {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 40%;
+  font-size: 14px;
+  padding: 5px 1px 5px 25px;
+  border: 1px solid #aaaa55;
+  margin-bottom: 12px;
+}
+
+
+#myInputSearch {
+  background-image: url("{% static 'images/search1.png' %}");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 14px 12px 40px;
+
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<script>
+$(document).ready(function(){
+
+    $("#myUL").hide();
+  $("#myInputSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#myInputSearchtc").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTabletc tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function () {
+$('#myTabletc').DataTable({
+"scrollY": "50vh",
+"scrollCollapse": true,
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+
+
+
+</head>
+<body>
+
+<div class="container">
+
+            <div  class="col-xs-12 col-md-1 col-lg-3" >
+
+
+                <div  class="row" >
+                      <div  class="col-xs-12 col-md-1 col-lg-6" >
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="margin-left:-10px;margin-top:10px;width:100%"><b id="phongkham_2">Trung tâm</b>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                {% if namediv_list %}
+                                    {% for name1 in namediv_list %}
+                                        <li><a href="/{{name1.id}}/">{{name1}} </a></li>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>No Div are available.</p>
+                                 {% endif %}
+                                    <li class="divider"></li>
+                                    <li><a href="http://doctorcityvn.pythonanywhere.com">All Div</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                      <div  class="col-xs-12 col-md-1 col-lg-6" >
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="margin-left:-10px;margin-top:10px;width:100%"><b id="phongkham_2">Phòng</b>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+
+                                {% for name1 in phongweb %}
+                                        <li><a href="">{{name1.tenphong}} </a></li>
+                                {% endfor %}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div  class="row" >
+
+                    <div  class="col-xs-12 col-md-1 col-lg-12" >
+                        <input type="text" id="myInputSearch" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                    </div>
+                </div>
+                <div  class="row" >
+                    <div class="table-wrapper-scroll-y">
+                        <table class="table" id="myTable">
+                            <tr>
+                                <th><b id="stt_1">Stt</b></th>
+                                <th><b id="hoten_1">Họ tên</b></th>
+                                <th><b id="tuoi_1">Tuổi/Tp</b></th>
+                            </tr>
+                            {% if person1 %}
+                                {% for name2 in person1 %}
+                            <tr>
+                                <td>{{forloop.counter}} </td>
+                                <td><a href="http://doctorcityvn.pythonanywhere.com/all/{{name2.codepatientp}}">{{name2}} </a></td>
+                                <td>{{name2.age}} tuổi, {{name2.City}} </a></td>
+                            </tr>
+                                {% endfor %}
+                            {% endif %}
+                        </table>
+                    </div>
+
+                </div>
+                <div  class="row" >
+                    <hr style="height:2px;border:1px solid Orange;;color:Orange;background-color:#333;" />
+                    {% if person2 %}
+                        {% for name3 in person2 %}
+                        <h5 id="ttbn_1"><b>Thông tin bệnh nhân - {{name3.namepatient}}:</b></h5>
+                            <ol>
+                                <li ><b >Tuổi:</b> {{name3.age}} </li>
+                                <li ><b id="diachi_1">Địa chỉ</b>: {{name3.place}} </li>
+                                <li ><b id="phongkham_1">Phòng khám:</b> {{name3.phong_id}}-{{name3.phong_id_namediv}} </li>
+                        {% endfor %}
+
+                    {% endif %}
+                    {% if tctq %}
+                        {% for tc1 in tctq %}
+                        {% if forloop.last  %}
+                            <li ><b id="lankham_1">Lần khám </b>: {{tc1.lankham}} </li>
+                            <li ><b id="ngaykham_1">Ngày khám</b>: {{tc1.date}} </li>
+                        {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+                            </ol>
+                </div>
+
+            </div>
+
+
+            </div>
+
+
+
+
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        <script>
+            $(window).load(function() {
+                $("#myUL").hide();
+            });
+
+        </script>
+
+
+        <script>
+        var ten="{{slug}}"
+            function myFunctionPrinter() {
+                window.open("http://doctorcityvn.pythonanywhere.com/printer/" + ten, "_blank");
+            }
+
+        </script>
+
+
+
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+</html>

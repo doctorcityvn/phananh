@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="{% static 'css/onsite.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+       $(document).ready(function() {
+             // executes when HTML-Document is loaded and DOM is ready
+             $("ul").hide();
+             $("#pan2").hide();
+            $("#pan3").hide();
+            $("#pan10").hide();
+            $("#panbenhsu").hide();
+            $("#panthongtin").hide();
+            $("#pantrieuchung").hide();
+            $("#panxuly").hide();
+            $("#pandichvu").hide();
+            $("#pandonthuoc").hide();
+            $("#panchat").hide();
+            $("#pantiepnhan1").hide();
+            $("#mothongtin").hide();
+            $("#mobenhsu").hide();
+            $("#moxuly").hide();
+            $("#modichvu").hide();
+            $("#mochat").hide();
+            $("#motrieuchung").hide();
+            $("#modonthuoc").hide();
+            $("#duongke").hide();
+            $("#myBtn").hide();
+
+
+
+        });
+
+        $(document).ready(function(){
+
+
+$("#kbtainha").click(function(){
+
+            $("#pankbtainha").show();
+            $("#pan1").hide();
+            $("#myBtn").show();
+
+
+});
+
+          $("#tiepnhan").click(function(){
+
+            $("#pantiepnhan1").show();
+            $("#pan1").hide();
+            $("#myBtn").show();
+
+
+          });
+
+
+        $("#myBtn").click(function(){
+            $("ul").hide();
+             $("#pan2").hide();
+            $("#pan3").hide();
+            $("#pan10").hide();
+            $("#panbenhsu").hide();
+            $("#panthongtin").hide();
+            $("#pantrieuchung").hide();
+            $("#panxuly").hide();
+            $("#pandichvu").hide();
+            $("#pandonthuoc").hide();
+            $("#panchat").hide();
+            $("#pantiepnhan1").hide();
+            $("#mothongtin").hide();
+            $("#mobenhsu").hide();
+            $("#moxuly").hide();
+            $("#modichvu").hide();
+            $("#mochat").hide();
+            $("#motrieuchung").hide();
+            $("#modonthuoc").hide();
+            $("#duongke").hide();
+            $("#myBtn").hide();
+            $("#pan1").show();
+
+          });
+          $("#hoanthienhoso").click(function(){
+            $("ul").hide();
+            $("#pan2").show();
+            $("#pan1").hide();
+            $("#myBtn").show();
+
+          });
+          $("#mohosokham").click(function(){
+            $("ul").hide();
+            $("#pan3").show();
+            $("#pan31").show();
+            $("#pan2").hide();
+            $("#pan1").hide();
+            $("#mothongtin").show();
+            $("#mobenhsu").show();
+            $("#moxuly").show();
+            $("#modichvu").show();
+            $("#mochat").show();
+            $("#motrieuchung").show();
+            $("#modonthuoc").show();
+            $("#panthongtin").show();
+            $("#duongke").show();$("#myBtn").show();
+
+
+
+          });
+          $("#chapnhantiepnhanbenhnhan").click(function(){
+            $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("ul").hide();
+            $("#pan3").show();
+            $("#pan31").show();
+            $("#pan2").hide();
+            $("#pan1").hide();
+            $("#mothongtin").show();
+            $("#mobenhsu").show();
+            $("#moxuly").show();
+            $("#modichvu").show();
+            $("#mochat").show();
+            $("#motrieuchung").show();
+            $("#modonthuoc").show();
+            $("#panthongtin").show();
+            $("#chapnhantiepnhanbenhnhan").hide();
+            $("#pantiepnhan1").hide();
+            $("#duongke").show();$("#myBtn").show();
+
+
+
+          });
+
+          $("#mothongtin").click(function(){
+            $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panthongtin").show();
+
+          });
+
+          $("#mobenhsu").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panbenhsu").show();
+
+          });
+          $("#motrieuchung").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pantrieuchung").show();
+
+          });
+          $("#moxuly").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panxuly").show();
+
+          });
+          $("#modichvu").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pandichvu").show();
+
+          });
+          $("#modonthuoc").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#pandonthuoc").show();
+
+          });
+          $("#mochat").click(function(){
+              $("#panthongtin").hide();$("#panbenhsu").hide(); $("#pantrieuchung").hide();$("#panxuly").hide();$("#pandichvu").hide();$("#pandonthuoc").hide();$("#panchat").hide();
+
+            $("#panchat").show();
+
+          });
+
+
+          $("#luuthongtin").click(function(){
+
+
+            $("#pan1").show();
+            $("#pan2").hide();
+
+          });
+        });
+    </script>
+
+
+
+     <script>
+        function Map1()
+        {
+            var myCenter=15,105;
+            var marker=new google.maps.Marker({
+            position:myCenter,
+            icon:'pinkball.png'
+            });
+
+            marker.setMap(map);
+        }
+    </script>
+      <script src="http://maps.googleapis.com/maps/api/js?key=#{AIzaSyD5wAflNNOYGLM4FiA9HWXZvYcPiyGi2sw}&sensor=false">
+        </script>
+        <script>
+          //Khoi tao Map
+
+
+            function initialize()
+            {
+            var myCenter=new google.maps.LatLng(21,106);
+            var mapProp = {
+              center:myCenter,
+              zoom:5,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+              };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            var marker=new google.maps.Marker({
+              position: myCenter,
+              //icon: "pinkball.png",
+              //title: "Landmark 72 ^_^",
+              //draggable: true,
+              //animation:google.maps.Animation.BOUNCE,
+              });
+
+            marker.setMap(map);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+       <button href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Close</button>
+      <hr class="style2">
+      <a href="http://doctorcityvn.pythonanywhere.com/test/"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/about/"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+      <a href="#"><img src="{% static 'images/service.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Services</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/all/BN1/#"><img src="{% static 'images/benhnhan.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Lịch sử khám bệnh</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/staff/"><img src="{% static 'images/datacenter.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thanh toán</a>
+      <a href="http://doctorcityvn.pythonanywhere.com/onsite/"><img src="{% static 'images/doctorathome.png' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thông báo từ trung tâm</a>
+
+      <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg" onclick="document.getElementById('id01').style.display='block'">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a>
+     <hr class="style2">
+      <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+                                <button id="mothongtin" class="w3-button w3-black"><img src="{% static 'images/thongtin.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Tin</button>
+
+                                <button id="mobenhsu" class="w3-button w3-black"><img src="{% static 'images/benhsu.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">B.Sử</button>
+
+
+                                <button id="motrieuchung" class="w3-button w3-black"><img src="{% static 'images/trieuchung.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">T.Chứng</button>
+
+
+                                <button id="moxuly" class="w3-button w3-black"><img src="{% static 'images/xuly.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">X.lý</button>
+
+                                <button id="modichvu" class="w3-button w3-black"><img src="{% static 'images/dichvu.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">D.Vụ</button>
+                                <button id="modonthuoc" class="w3-button w3-black"><img src="{% static 'images/donthuoc.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Đ.Thuốc</button>
+                                <button id="mochat" class="w3-button w3-black"><img src="{% static 'images/chat.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">Chat</button>
+
+
+
+
+
+
+
+        <div  class="row">
+
+            <button class="form-control form-control-sm" id="myBtn">Back to home</button>
+            <div class="panel panel-default" id="pan1" >
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4">
+
+                      <div class="""slidecontainer">
+                      <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+
+                    </div>
+
+                </div>
+                <div class="panel-body" style="max-height: 750px;">
+
+                    <button type="button" class="btn btn-info" id="ttdvgannhat">Thông tin dịch vụ gần nhất </button>
+                    <div id="googleMap" class="z-depth-1-half map-container" style="height: 200px; margin-top: 25px;"></div>
+                    <br/>
+                    <button type="button" class="btn btn-info" id="dkchuyengia">Đặt khám chuyên gia </button>
+                    <button type="button" class="btn btn-info" id="dvcdtainha">Dịch vụ chuẩn đoán tại nhà </button>
+                    <button type="button" class="btn btn-info" id="dvcstainha">Dịch vụ chăm sóc tại nhà</button>
+                    <button type="button" class="btn btn-info" id="kbtainha">Khám bệnh tại nhà</button>
+
+                    
+                </div>
+            </div>
+            <div class="panel panel-default" id="pankbtainha">
+
+                <div class="panel-body" 
+                    <table class="table table-bordered table-striped" >
+                            <thead>
+                                            
+                            </thead>
+                            <tbody>
+                                                
+
+                                                <tr>
+
+                                                    <td style="display:none">Chọn dịch vụ</td>
+                                                 </tr>
+                                                  <tr>  
+                                                    <td style="width: 70%">
+                                                    <div class="form-group">
+                                                    <select class="form-control" name="trangthai{{forloop.counter}}">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                    <option>13</option>
+
+                                                  </select>
+                                                    </div>
+                                                    </td>
+
+                             </tbody>
+                    </table>
+                </div>    
+            </div>    
+
+
+            
+
+        </div>
+
+    <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "290px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{% static 'images/loginavatar.png' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="form-group">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" class="form-control" checked="checked" name="remember"> Remember me
+                      </label>
+
+            </div>
+
+            <div class="form-group">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </form>
+      // index 1
+
+
+</div>
+
+    <script>
+            function Chapnhan() {
+              document.getElementById("tabhome").hide();
+
+            }
+
+
+    </script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script>
+            function scrollFunction() {
+          if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction1() {
+          window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+        }
+</script>
+</body>
+
+</html>
+

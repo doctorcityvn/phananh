@@ -1,0 +1,860 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="{% static 'css/user.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <script src="{% static 'js/user.js' %}"></script>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 350px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+
+    <script>
+
+
+    </script>
+
+
+
+
+
+
+    <title>Document</title>
+
+<style></style>
+
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+       <button href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Close</button>
+
+       <a class="navbar-brand" href="#">
+           <center>
+          <img src="{% static 'images/loginavatar.png' %}" style="max-height:80px"> {{ current_user }}
+          </center>
+
+        </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="http://doctorcityvn.pythonanywhere.com/menu/" style="text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+
+      <a class="btn btn-info btn-lg" id="lichsu" style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Lịch sử khám bệnh</a>
+
+      <a class="btn btn-info btn-lg" id="thongtin"  style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thông tin gần nhất</a>
+      <a class="btn btn-info btn-lg" id="thongtin"  style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thiết lập thanh toán</a>
+      <a class="btn btn-info btn-lg" id="thongtin"  style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> Thông báo từ trung tâm</a>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="http://doctorcityvn.pythonanywhere.com/about/" style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+
+      <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg" style="text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+
+    </div>
+
+
+    <div class="container">
+
+
+
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <div id="map"></div>
+
+        <div class="row" id="pandydvkbtnha2" >
+            </br>
+            </br>
+            <form action="/staff/" method="get">
+
+                        <table class="table" id="table1">
+                                    <thead>
+                                        <th span="2 col">Tên bác sỹ:</th>
+                                        <th span="2 col">---</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Số chứng chỉ hành nghề</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+
+
+                                    </tbody>
+                            </table>
+                                        <center>
+                                          <img src="{% static 'images/loginavatar.png' %}" style="max-height:150px; width:200px; margin-bottom: 25px;">
+                                          </center>
+
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="slidecontainer">
+
+                                                  <input type="range" min="1" max="5" value="4" class="slider" id="myRange1" disabled>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+
+
+
+                    </form>
+
+              <div class="center">
+                  <br/>
+                  <br/>
+
+                <div class="col-xs-7">
+
+
+
+                    <button class="btn btn-info" id="tuchoi1" >Hủy dịch vụ</button>
+                    </div>
+                    <div class="col-xs-5">
+                    <button class="btn btn-info" id="dongydichvu1" >Đặt dịch vụ</button>
+                    </div>
+                    </br>
+
+
+            </div>
+            <div class="row">
+                <br/>
+            <div class="center">
+
+            </div>
+
+
+            </div>
+        </div>
+<div class="row" id="pandydvkbtnha" >
+            </br>
+            </br>
+            <form action="/staff/" method="get">
+
+                        <table class="table" id="table1">
+                                    <thead>
+                                        <th span="2 col">Tên bác sỹ:</th>
+                                        <th span="2 col">---</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Số chứng chỉ hành nghề</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+
+
+                                    </tbody>
+                            </table>
+                                        <center>
+                                          <img src="{% static 'images/loginavatar.png' %}" style="max-height:150px; width:200px; margin-bottom: 25px;">
+                                          </center>
+
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="slidecontainer">
+
+                                                  <input type="range" min="1" max="5" value="4" class="slider" id="myRange1" disabled>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+
+
+
+                    </form>
+
+              <div class="center">
+                  <br/>
+                  <br/>
+
+                <div class="col-xs-7">
+
+
+
+                    <button class="btn btn-info" id="tuchoi1" >Hủy dịch vụ</button>
+                    </div>
+                    <div class="col-xs-5">
+                    <button class="btn btn-info" id="dongydichvu1" >Đặt dịch vụ</button>
+                    </div>
+                    </br>
+
+
+            </div>
+            <div class="row">
+                <br/>
+            <div class="center">
+
+            </div>
+
+
+            </div>
+        </div>
+
+
+
+                                <button id="mothongtin" class="w3-button w3-black" ><img src="{% static 'images/thongtin.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px; padding-left:-15px;"><div>Thôn tin</div></button>
+
+                                <button id="modichvu" class="w3-button w3-black" ><img src="{% static 'images/dichvu.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:30px"><div>Dịch Vụ</div></button>
+
+                                <button id="modonthuoc" class="w3-button w3-black" ><img src="{% static 'images/donthuoc.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px"><div>Đơn Thuốc</div></button>
+
+                                <button id="mohosokham" class="w3-button w3-black"><img src="{% static 'images/benhsu.ico' %}" class="img-fluid" alt="Responsive image" style="max-height:30px"><div>Hồ sơ</div></button>
+
+
+
+            <button class="form-control form-control-sm" id="myBtn" style="margin-top: 10px;">Back to home</button>
+
+            <div id="manhinhchinh">
+
+
+                        <button class="btn btn-info btn-block" id="dkcgia" style="margin-top: 25px;">Đặt khám chuyên gia</button>
+
+
+                        <button class="btn btn-info btn-block" id="dvcdtnha" style="margin-top: 25px;">Dịch vụ chẩn đoán tại nhà</button>
+
+                        <button class="btn btn-info btn-block" id="dvcstnha" style="margin-top: 25px;">Dịch vụ chăm sóc tại nhà</button>
+
+                        <button class="btn btn-info btn-md btn-block" id="kbtnha" style="margin-top: 25px;"><b>Khám bệnh tại nhà</b></button>
+
+
+            </div>
+
+
+            <br/>
+            <div class="panel panel-default" id="pankbtnha">
+
+                <div class="panel-body" style="background-color: {{ pancolor }}; max-height: 750px; height: 750px;">
+
+
+                    <form action="/staff/" method="get">
+
+                        <table class="table" id="table1">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td><lable for "tendichvu">Chọn dịch vụ:</lable></td>
+                                            <td>
+                                                <select class="selectpicker" data-live-search="true" id="chondichvu" name="chondichvu">
+                                              <option data-tokens="ketchup mustard">Cấp cứu</option>
+                                              <option data-tokens="mustard">Khám bệnh tại nhà</option>
+                                              <option data-tokens="frosting">Tiêm phòng</option>
+
+                                            </select>
+
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Chọn Chất lượng:</lable></td>
+                                            <td>
+                                                <select class="selectpicker" data-live-search="true" id="chondichvu" name="chondichvu">
+                                              <option data-tokens="ketchup mustard">Loại 1</option>
+                                              <option data-tokens="mustard">Loại 2</option>
+                                              <option data-tokens="frosting">Loại 3</option>
+
+                                            </select>
+
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><lable for "tendichvu">Chọn ngôn ngữ:</lable></td>
+                                            <td>
+                                                <select class="selectpicker" data-live-search="true" id="chondichvu" name="chondichvu">
+                                              <option data-tokens="ketchup mustard">Tiếng Việt</option>
+                                              <option data-tokens="mustard">Tiếng Anh</option>
+                                              <option data-tokens="mustard">Tiếng Pháp</option>
+                                              <option data-tokens="frosting">Tiếng Hàn</option>
+                                              <option data-tokens="frosting">Tiếng Nhật</option>
+
+
+                                            </select>
+
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><lable >Mã khuyến mại:</lable></td>
+                                            <td><input type="text" class="form input-sm" style="background-color: white;" id="makhuyenmai"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><lable >Giá dịch vụ:</lable></td>
+                                            <td><input type="text" id="giadichvu" class="form input-sm" style="background-color: white;"></td>
+
+                                        </tr>
+                                    </tbody>
+                            </table>
+
+
+
+                    </form>
+
+
+                    <div class="col-xs-7">
+
+                    <button class="btn btn-info" id="tuchoi" >Hủy dịch vụ</button>
+                    </div>
+                    <div class="col-xs-5">
+                    <button class="btn btn-info" id="dongydichvu" >Đặt dịch vụ 2</button>
+                    </div>
+                    </br>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default" id="panlichsu"  >
+                <div class="panel-body" style="background:  white; max-height: 750px; height: 750px;">
+
+                    <button type="button" class="btn btn-primary" style="width:200px;">Lịch sử khám bệnh</button >
+
+                   <br/>
+                   <br/>
+
+
+                    <div class="table-wrapper-scroll-y">
+
+                                        <table class="table table-hover table-dark">
+                                            <thead>
+
+                                                <th>Thông tin</th>
+                                                <th>Ghi chú</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Tên dịch vụ</div>
+                                                    <div>Ngày khám</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div>Xem hồ sơ</div>
+                                                    <div>Tình trạng</div>
+
+                                                    </td>
+
+                                                </tr>
+                                              <tr>
+
+                                                    <td>
+                                                     <div>Khám cấp cứu</div>
+                                                    <div>28/2/2019</div>
+
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem hồ sơ</button ></div>
+                                                    <div>Chưa kết thúc</div>
+
+                                                    </td>
+
+                                                </tr>
+                                                 <tr>
+
+                                                    <td>
+                                                     <div>Xét nghiệm máu</div>
+                                                    <div>13/1/2019</div>
+
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem hồ sơ</button ></div>
+                                                    <div>Đã kết thúc</div>
+
+                                                    </td>
+
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+
+                    </div>
+                        <br/>
+
+
+                </div>
+            </div>
+            <div class="panel panel-default" id="panttgn">
+
+                <div class="panel-body" >
+
+
+                    <form action="/staff/" method="get">
+
+                        <table class="table" id="table1">
+                                    <thead>
+                                        <th span="2 col">Tên bác sỹ:</th>
+                                        <th span="2 col">---</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Số chứng chỉ hành nghề</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ngày khám</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chẩn đoán</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chẩn đoán</td></td>
+                                            <td>--</td></td>
+                                        </tr>
+
+                                    </tbody>
+                            </table>
+                                        <center>
+                                          <img src="{% static 'images/loginavatar.png' %}" style="max-height:150px; width:200px; margin-bottom: 25px;">
+                                          </center>
+
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="slidecontainer">
+
+                                                  <input type="range" min="1" max="5" value="4" class="slider" id="myRange1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <img src="{% static 'images/Star.png' %}" class="img-fluid" alt="Responsive image" style="max-height:30px">
+                                            </div>
+
+
+
+                    </form>
+
+                    </br>
+
+
+                <script>
+
+                    function myFunction() {
+                      window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+                    }
+
+
+
+                </script>
+
+                </div>
+
+            </div>
+            <div class="panel panel-default" id="pandichvu" >
+                        <div class="panel-body" style="max-height: 750px; background:  linear-gradient(to bottom, #4d4d00 12%, #ffffff 80%);">
+
+
+                                <table class="table table-hover table-dark"  id="bangdichvu">
+                                    <thead>
+                                        <tr>
+                                                <th  class="text-left" style="color: Yellow ;">Mô tả dịch vụ</th>
+                                                <th  class="text-left" style="color: Yellow ;">Trạng thái</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr>
+
+                                            <td align="left">Dịch vụ A</td>
+                                            <td align="left">Đồng ý</td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                            <td align="left">Dịch vụ A</td>
+                                            <td align="left">Đang thực hiện</td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                           <td align="left">Dịch vụ C</td>
+                                            <td align="left">Đã thực hiện</td>
+
+
+
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                                <br/>
+
+
+
+                </div>
+                <br/>
+               <button class="form-control form-control-sm" id="myBtn" style="margin-top: 10px;">Back to home</button>
+            </div>
+            <div class="panel panel-default" id="pandonthuoc"  >
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-primary" style="width:130px;">Gửi email</button >
+                    </div>
+                    <div class="col-xs-6">
+                    <button type="button" class="btn btn-primary" style="width:130px;">In tất cả</button >
+                    </div>
+
+                <div class="panel-body" style="background:  white; max-height: 750px; height: 750px;">
+                    <div class="table-wrapper-scroll-y">
+                                        <table class="table table-hover table-dark">
+                                            <thead>
+
+                                                <th>Thông tin</th>
+                                                <th>Ghi chú</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Tên hoạt chất</div>
+                                                    <div>Tên hoạt thương mại</div>
+                                                    <div>Hướng dẫn sử dụng</div>
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: red;">Số lượng</div>
+                                                    <div><br/></div>
+                                                    <div>Đơn vị</div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Paracetamol 500mg</div>
+                                                    <div>Paracetamol 500mg</div>
+                                                    <div>Uống một viên khi sốt trên 38 độ</div>
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: red;">05</div>
+                                                    <div><br/></div>
+                                                    <div>Viên sủi</div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Gentamicyn 500mg</div>
+                                                    <div>Gentamicyn 500mg</div>
+                                                    <div>Tiêm bắp thịt 1 lần/ngày</div>
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: red;">10</div>
+                                                    <div><br/></div>
+                                                    <div>Ống tiêm</div>
+                                                    </td>
+
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+
+                    </div>
+                        <br/>
+
+
+                </div>
+            </div>
+            <div class="panel panel-default" id="panhoso"  >
+                <div class="panel-body" style="background:  white; max-height: 750px; height: 750px;">
+                    <div class="col-xs-6">
+                    <button type="button" class="btn btn-primary" style="width:130px;">Gửi email</button >
+                    </div>
+                    <div class="col-xs-6">
+                    <button type="button" class="btn btn-primary" style="width:130px;">In tất cả</button >
+                    </div>
+
+
+                    <div class="table-wrapper-scroll-y">
+
+                                        <table class="table table-hover table-dark">
+                                            <thead>
+
+                                                <th>Thông tin</th>
+                                                <th>Ghi chú</th>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Hóa đơn thanh toán</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem</button ></div>
+
+                                                    </td>
+
+                                                </tr>
+                                              <tr>
+
+                                                    <td>
+                                                    <div>Đơn thuốc</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem</button ></div>
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Phiếu khám bệnh</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem</button ></div>
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Kết quả xét nghiệm máu</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem</button ></div>
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                    <div>Kết quả siêu âm</div>
+
+                                                    </td>
+                                                    <td>
+                                                    <div style="color: blue;"><button type="button" class="btn btn-info">Xem</button ></div>
+
+                                                    </td>
+
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+
+                    </div>
+                        <br/>
+
+
+                </div>
+            </div>
+
+
+    <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "290px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{% static 'images/loginavatar.png' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="form-group">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" class="form-control" checked="checked" name="remember"> Remember me
+                      </label>
+
+            </div>
+
+            <div class="form-group">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+      </form>
+      // index 1
+
+
+</div>
+
+    <script>
+            function Chapnhan() {
+              document.getElementById("tabhome").hide();
+
+            }
+
+
+    </script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script>
+            function scrollFunction() {
+          if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction1() {
+          window.open("http://doctorcityvn.pythonanywhere.com/test/","_self");
+        }
+</script>
+
+     <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 16.397, lng: 105.644},
+          zoom: 17
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            var marker = new google.maps.Marker({
+              position: pos,
+              map: map,
+              title: 'Uluru (Ayers Rock)'
+            });
+            marker.addListener('click', function() {
+
+              infowindow.open(map, marker);
+            });
+
+
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ map1 }} &callback=initMap">
+    </script>
+
+
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+</html>
+

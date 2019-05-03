@@ -1,0 +1,163 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="{% static 'css/onsite.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- icon -->
+    <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+       <button href="javascript:void(0)" class="closebtn" onclick="closeNav()" font>&times; Close</button>
+
+       <a class="navbar-brand" href="#">
+           <center>
+          <img src="{% static 'images/loginavatar.png' %}" style="max-height:80px"> {{ current_user }}
+          </center>
+
+        </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <hr class="style2">
+      <a class="btn btn-info btn-lg" href="http://doctorcityvn.pythonanywhere.com/menu_doctor/" style="text-align:left;background: linear-gradient(to bottom, #6600ff 0%, #cc99ff 80%);"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a class="btn btn-info btn-lg" href="http://doctorcityvn.pythonanywhere.com/about/" style="text-align:left;background:  linear-gradient(to top, #4d4d00 15%, #ffffff 100%);"><img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="Responsive image" style="max-height:20px"> About</a>
+
+
+
+     <hr class="style2">
+      <a href="{% url 'logout' %}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+      <div  class="row">
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+
+
+</div>
+
+        <div  class="row">
+
+
+<center><img src="{% static 'images/logo.png' %}" alt="ảnh logo" class="img-fluid " style="max-height:80px; max-width:100%;"></center>
+<br/>
+              <div class="grad1" id="pan1" >
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4">
+
+
+
+                </div>
+                <div class="panel-body" style="max-height: 750px;">
+
+
+
+
+
+                    <button type="button" class="btn btn-info btn-lg btn-block" onclick="bacsy()" id="bacsy" style="margin-top: 10px;">Bác sỹ</button>
+
+
+
+                    <br/>
+
+
+                    <center><img src="{% static 'images/slogan.png' %}" alt="ảnh logo" class="img-fluid " style="max-height:60px; max-width:100%;margin-top: 15px;"></center>
+                    <center><img src="{% static 'images/hinhbs.jpg' %}" alt="ảnh logo" class="img-fluid " style="max-height:400px; max-width:100%; margin-top: 10px;"></center>
+
+                </div>
+                  <script>
+
+                    function khachhang() {
+                      window.open("https://doctorcityvn.pythonanywhere.com/user/","_self");
+                    }
+                    function bacsy() {
+                      window.open("https://doctorcityvn.pythonanywhere.com/test/","_self");
+                    }
+                    function trungtam() {
+                      window.open("http://doctorcityvn.pythonanywhere.com/khoa/","_self");
+                    }
+                    function data() {
+                      window.open("http://doctorcityvn.pythonanywhere.com/staff/","_self");
+                    }
+
+
+
+                </script>
+
+            </div>
+
+
+        </div>
+
+<script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+</body>
+{% else %}
+<div class="row">
+    <div class="col-xs-6">
+        <div>
+            <div><br/><br/><br/><br/></script>
+                <center></script><a href="{% url 'login1' %}" class="close" style="font-size: x-large; margin-top: 100px ">
+                <strong>You are not logged in!, Please login</strong> </a></center>
+                <br/>
+            </div>
+        <div><br/><br/></div>
+
+    </div>
+
+    <form action="{% url 'login1' %}">
+
+        <center></script><button type="submit" class="btn btn-info" style="font-size: x-large; background-color: lightblue;">Go to Login</button></center>
+
+    </form>
+
+</div>
+{% endif %}
+
+{% endblock %}
+
+</html>
+
